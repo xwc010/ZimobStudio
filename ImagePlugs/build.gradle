@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // https://github.com/square/picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // Luban（鲁班） —— Android图片压缩工具，仿微信朋友圈压缩策略。
+    // https://github.com/Curzibn/Luban
+    compile 'top.zibin:Luban:1.1.3'
+}
