@@ -62,6 +62,11 @@ dependencies {
     // AndroidUtilCode https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
     compile 'com.blankj:utilcode:1.9.10'
 
+    // Android App 沉浸式状态栏解决方案
+    // https://github.com/laobie/StatusBarUtil
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+
     compile project(':AdPlugs')
     compile project(':AnalyStatisPlugs')
+    compile project(':UIPlugs')
 }

@@ -56,4 +56,16 @@ dependencies {
     // QMUI Android 的设计目的是用于辅助快速搭建一个具备基本设计还原效果的 Android 项目
     // http://qmuiteam.com/android/page/index.html
     compile 'com.qmuiteam:qmui:1.0.4'
+
+    // Alibaba. VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题
+    compile ('com.alibaba.android:vlayout:1.2.6@aar') {
+        transitive = true
+    }
+
+    // BaseRecyclerViewAdapterHelper
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    // 一个实现了material引导界面的库，类似Google Sheets
+    // http://www.jcodecraeer.com/a/opensource/2015/1112/3680.html
+    compile 'za.co.riggaroo:materialhelptutorial:1.0.1'
 }

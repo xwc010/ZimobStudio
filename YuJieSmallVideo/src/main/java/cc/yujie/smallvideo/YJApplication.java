@@ -8,4 +8,8 @@ import cc.yujie.basicplugs.YuJieBaseApplication;
 
 public class YJApplication extends YuJieBaseApplication {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 }

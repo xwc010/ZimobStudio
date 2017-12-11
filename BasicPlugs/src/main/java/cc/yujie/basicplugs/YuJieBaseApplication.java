@@ -10,6 +10,8 @@ import com.orhanobut.logger.Logger;
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
+import cc.yujie.basicplugs.utils.Utils;
+
 /**
  * Created by xwc on 2017/12/11.
  */
@@ -26,6 +28,7 @@ public class YuJieBaseApplication extends Application {
                 return BuildConfig.DEBUG;
             }
         });
+        Utils.init(this);
     }
 
     @Override

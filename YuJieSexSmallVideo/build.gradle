@@ -35,7 +35,6 @@ dependencies {
     compile project(':BasicPlugs')
     compile project(':DataPlugs')
     compile project(':ImagePlugs')
-    compile project(':UIPlugs')
     compile project(':VideoPlugs')
     compile project(':WebPlus')
 }
