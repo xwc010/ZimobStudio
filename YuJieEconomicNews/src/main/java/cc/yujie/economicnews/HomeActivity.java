@@ -1,9 +1,10 @@
 package cc.yujie.economicnews;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeActivity extends AppCompatActivity {
+import cc.yujie.basicplugs.YuJieBaseActivity;
+
+public class HomeActivity extends YuJieBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

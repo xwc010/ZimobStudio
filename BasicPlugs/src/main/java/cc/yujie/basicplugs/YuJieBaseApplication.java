@@ -7,10 +7,15 @@ import android.support.multidex.MultiDex;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
+import org.acra.ACRA;
+import org.acra.annotation.ReportsCrashes;
+
 /**
  * Created by xwc on 2017/12/11.
  */
-
+@ReportsCrashes(
+        formUri = "http://www.backendofyourchoice.com/reportpath"
+)
 public class YuJieBaseApplication extends Application {
 
     @Override
@@ -27,6 +32,7 @@ public class YuJieBaseApplication extends Application {
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
         MultiDex.install(context);
+        ACRA.init(this);
     }
 
     @Override

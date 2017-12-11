@@ -42,4 +42,20 @@ dependencies {
 
     // https://github.com/orhanobut/logger
     compile 'com.orhanobut:logger:2.1.1'
+
+    // Application Crash Reports for Android
+    // https://github.com/ACRA/acra
+    compile 'ch.acra:acra:4.9.2'
+
+    // 运行时权限
+    // https://github.com/googlesamples/easypermissions
+    compile 'pub.devrel:easypermissions:1.1.0'
+
+    // MagicaSakura 是 Android 多主题框架
+    // https://github.com/Bilibili/MagicaSakura
+    compile 'com.bilibili:magicasakura:0.1.8@aar'
+
+
+    compile project(':AdPlugs')
+    compile project(':AnalyStatisPlugs')
 }

@@ -30,6 +30,7 @@ dependencies {
     compile 'org.jsoup:jsoup:1.8.3'
 
     // https://github.com/AriaLyy/Aria
+    // Aria：简单易用、高效的下载框架
     compile 'com.arialyy.aria:aria-core:3.3.7'
     annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.7'
 }

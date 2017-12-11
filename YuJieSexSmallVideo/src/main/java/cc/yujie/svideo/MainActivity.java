@@ -1,9 +1,10 @@
 package cc.yujie.svideo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import cc.yujie.basicplugs.YuJieBaseActivity;
+
+public class MainActivity extends YuJieBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
