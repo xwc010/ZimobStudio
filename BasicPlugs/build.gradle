@@ -55,6 +55,12 @@ dependencies {
     // https://github.com/Bilibili/MagicaSakura
     compile 'com.bilibili:magicasakura:0.1.8@aar'
 
+    // 清晰灵活简单易用的应用更新库
+    // https://github.com/czy1121/update
+    compile 'com.github.czy1121:update:1.1.1'
+
+    // AndroidUtilCode https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
+    compile 'com.blankj:utilcode:1.9.10'
 
     compile project(':AdPlugs')
     compile project(':AnalyStatisPlugs')

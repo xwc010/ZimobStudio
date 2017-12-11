@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cc.yujie.basicplugs.YuJieFragment;
+import cc.yujie.basicplugs.YuJieBaseFragment;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class HomeActivityFragment extends YuJieFragment {
+public class HomeActivityFragment extends YuJieBaseFragment {
 
     public HomeActivityFragment() {
     }

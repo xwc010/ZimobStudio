@@ -13,7 +13,7 @@ import android.view.ViewGroup;
  * Created by xwc on 2017/12/11.
  */
 
-public class YuJieFragment extends Fragment {
+public class YuJieBaseFragment extends Fragment {
 
     @Override
     public void onAttach(Context context) {

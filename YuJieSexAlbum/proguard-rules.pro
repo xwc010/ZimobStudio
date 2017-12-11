@@ -206,3 +206,8 @@
 -keep class com.google.gson.examples.android.model.** { *; }
 
 ##---------------End: proguard configuration for Gson  ----------
+
+##---------------AndroidUtilCode  ----------
+-keep class com.blankj.utilcode.** { *; }
+-keepclassmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**
