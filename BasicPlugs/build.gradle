@@ -44,31 +44,13 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + versions.leakcanary
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + versions.leakcanary
 
-    // https://github.com/orhanobut/logger
-    compile 'com.orhanobut:logger:' + versions.logger
-
-    // Application Crash Reports for Android
-    // https://github.com/ACRA/acra
-    compile 'ch.acra:acra:' + versions.acra
-
-    // 运行时权限
-    // https://github.com/googlesamples/easypermissions
-    compile 'pub.devrel:easypermissions:' + versions.easypermissions
-
-    // MagicaSakura 是 Android 多主题框架
-    // https://github.com/Bilibili/MagicaSakura
-    compile 'com.bilibili:magicasakura:' + versions.magicasakura
-
-    // 清晰灵活简单易用的应用更新库
-    // https://github.com/czy1121/update
-    compile 'com.github.czy1121:update:' + versions.update
-
-    // AndroidUtilCode https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
-    compile 'com.blankj:utilcode:' + versions.utilcode
-
-    // Android App 沉浸式状态栏解决方案
-    // https://github.com/laobie/StatusBarUtil
-    compile 'com.jaeger.statusbarutil:library:' + versions.statusbarutil
+    compile lib.logger
+    compile lib.acra
+    compile lib.easypermissions
+    compile lib.magicasakura
+    compile lib.update
+    compile lib.utilcode
+    compile lib.statusbarutil
 
     compile project(':AdPlugs')
     compile project(':AnalyStatisPlugs')

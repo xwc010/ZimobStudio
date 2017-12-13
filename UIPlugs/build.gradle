@@ -29,52 +29,25 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Star 2869 TwinklingRefreshLayout 支持下拉刷新和上拉加载的RefreshLayout,自带越界回弹效果，支持RecyclerView,AbsListView,ScrollView,WebView
-    // https://github.com/lcodecorex/TwinklingRefreshLayout
-    compile ('com.lcodecorex:tkrefreshlayout:' + versions.tkrefreshlayout, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    // Star 8236 下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer
-    // https://github.com/scwang90/SmartRefreshLayout
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:' + versions.SmartRefreshLayout
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:' + versions.SmartRefreshLayout
-
-    // https://github.com/afollestad/material-dialogs
-    compile ('com.afollestad.material-dialogs:core:' + versions.material_dialogs, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
-    // https://github.com/JohnPersano/SuperToasts
-    compile ('com.github.johnpersano:supertoasts:' + versions.supertoasts, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
-    // https://github.com/H07000223/FlycoTabLayout
-    // After v2.0.2(support 3.0+)
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:' + versions.FlycoTabLayout
-
-    // 俗名：可垂直跑、可水平跑的跑马灯；学名：可垂直翻、可水平翻的翻页公告
-    // https://github.com/sfsheng0322/MarqueeView
-    compile 'com.sunfusheng:marqueeview:' + versions.marqueeview
-
-    // 引导界面滑动导航 + 大于等于1页时无限轮播 + 各种切换动画轮播效果
-    // https://github.com/bingoogolapple/BGABanner-Android
-    compile 'cn.bingoogolapple:bga-banner:' + versions.bga_banner
-
-    // QMUI Android 的设计目的是用于辅助快速搭建一个具备基本设计还原效果的 Android 项目
-    // http://qmuiteam.com/android/page/index.html
-    compile 'com.qmuiteam:qmui:' + versions.qmui
-
-    // Alibaba. VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题
-    compile ('com.alibaba.android:vlayout:' + versions.vlayout) {
+    compile lib.SmartRefreshLayout
+    compile lib.SmartRefreshHeader
+    compile lib.RecyclerHelper
+    compile lib.helptutorial
+    compile lib.FlycoTabLayout
+    compile lib.marqueeview
+    compile lib.bga_banner
+    compile lib.qmui
+    compile (lib.vlayout) {
         transitive = true
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-
-    // BaseRecyclerViewAdapterHelper
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:' + versions.RecyclerHelper
-
-    // 一个实现了material引导界面的库，类似Google Sheets
-    // http://www.jcodecraeer.com/a/opensource/2015/1112/3680.html
-    compile 'za.co.riggaroo:materialhelptutorial:' + versions.helptutorial
+    compile (lib.material_dialogs, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile (lib.supertoasts, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile (lib.tkrefreshlayout, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 }

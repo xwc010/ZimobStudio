@@ -29,12 +29,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Android VideoPlayer MediaPlayer VideoView MediaView Float View And Fullscreen
-    // https://github.com/lipangit/JiaoZiVideoPlayer
-    compile 'cn.jzvd:jiaozivideoplayer:' + versions.jiaozivideoplayer
-
-    // Bilibili/ijkplayer
-    // https://github.com/Bilibili/ijkplayer
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:' + versions.ijkplayer
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:' + versions.ijkplayer
+    compile lib.jiaozivideoplayer
+    compile lib.ijkplayer
+    compile lib.ijkplayer_armv7a
 }

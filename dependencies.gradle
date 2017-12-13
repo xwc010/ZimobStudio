@@ -15,48 +15,60 @@ ext.versions = [
         retrolambda       : '3.2.5',
         leakcanary        : '1.5.1',
         junit             : '4.12',
+]
 
-        logger            : '2.1.1', // com.orhanobut:logger
-        acra              : '4.9.2', // ch.acra:acra
-        easypermissions   : '1.1.0', // pub.devrel:easypermissions
-        magicasakura      : '0.1.8@aar', // com.bilibili:magicasakura
-        update            : '1.1.1', // com.github.czy1121:update
-        utilcode          : '1.9.10', // com.blankj:utilcode
-        statusbarutil     : '1.4.0', // com.jaeger.statusbarutil:library
+ext.lib = [
+        logger            : 'com.orhanobut:logger:2.1.1',   // https://github.com/orhanobut/logger
+        acra              : 'ch.acra:acra:4.9.2',   // Application Crash Reports for Android, https://github.com/ACRA/acra
+        easypermissions   : 'pub.devrel:easypermissions:1.1.0',   // 运行时权限, https://github.com/googlesamples/easypermissions
+        magicasakura      : 'com.bilibili:magicasakura:0.1.8@aar',   // MagicaSakura 是 Android 多主题框架, https://github.com/Bilibili/MagicaSakura
+        update            : 'com.github.czy1121:update:1.1.1',   // 清晰灵活简单易用的应用更新库, https://github.com/czy1121/update
+        utilcode          : 'com.blankj:utilcode:1.9.10',   // AndroidUtilCode https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
+        statusbarutil     : 'com.jaeger.statusbarutil:library:1.4.0',   // Android App 沉浸式状态栏解决方案, https://github.com/laobie/StatusBarUtil
 
-        okhttp            : '2.7.5',
-        okio              : '1.8.0',
-        aria              : '3.3.7', // com.arialyy.aria:aria-compiler, com.arialyy.aria:aria-core
-        jsoup             : '1.8.3', // org.jsoup:jsoup
-        gson              : '2.3.1',
+        okhttp            : 'com.squareup.okhttp:okhttp:2.7.5',
+        okio              : 'com.squareup.okio:okio:1.8.0',
+        aria_compiler     : 'com.arialyy.aria:aria-compiler:3.3.7', // Aria：简单易用、高效的下载框架, https://github.com/AriaLyy/Aria
+        aria_core         : 'com.arialyy.aria:aria-core:3.3.7',
+        jsoup             : 'org.jsoup:jsoup:1.8.3',
+        gson              : 'com.google.code.gson:gson:2.3.1',
 
-        picasso           : '2.5.2',
-        Luban             : '1.1.3', // top.zibin:Luban
+        picasso           : 'com.squareup.picasso:picasso:2.5.2', // https://github.com/square/picasso
+        Luban             : 'top.zibin:Luban:1.1.3', // Luban（鲁班） —— Android图片压缩工具，仿微信朋友圈压缩策略。https://github.com/Curzibn/Luban
 
-        agentweb          : '2.0.1', // com.just.agentweb:agentweb
-        jsbridge          : '1.0.4', // com.github.lzyzsd:jsbridge
-        markdownview      : '1.1.0', // us.feras.mdv:markdownview
+        // AgentWeb 是基于 Android WebView 一个轻量级浏览器库 ， 使用很方便 ， 集成进你应用 ，只需几行代码 。 https://github.com/Justson/AgentWeb
+        agentweb          : 'com.just.agentweb:agentweb:2.0.1',
+        jsbridge          : 'com.github.lzyzsd:jsbridge:1.0.4',
+        markdownview      : 'us.feras.mdv:markdownview:1.1.0',
 
-        ijkplayer         : '0.8.4', // tv.danmaku.ijk.media:ijkplayer
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+        // Bilibili/ijkplayer, https://github.com/Bilibili/ijkplayer
+        ijkplayer         : 'tv.danmaku.ijk.media:ijkplayer-java:0.8.4',
+        ijkplayer_armv7a  : 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4',
+        // Android VideoPlayer MediaPlayer VideoView MediaView Float View And Fullscreen, https://github.com/lipangit/JiaoZiVideoPlayer
+        jiaozivideoplayer : 'cn.jzvd:jiaozivideoplayer:6.2.2',
 
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
-        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
-
-        tkrefreshlayout   : '1.0.7', // com.lcodecorex:tkrefreshlayout
-        SmartRefreshLayout: '1.0.3', // com.scwang.smartrefresh:SmartRefreshLayout
-        material_dialogs  : '0.9.6.0', // com.afollestad.material-dialogs:core
-        FlycoTabLayout    : '2.1.2@aar', // com.flyco.tablayout:FlycoTabLayout_Lib
-        supertoasts       : '2.0', // com.github.johnpersano:supertoasts
-        marqueeview       : '1.3.3', // com.sunfusheng:marqueeview
-        bga_banner        : '2.1.9@aar', // cn.bingoogolapple:bga-banner
-        qmui              : '1.0.4', // com.qmuiteam:qmui
-        vlayout           : '1.2.6@aar', // com.alibaba.android:vlayout
-        RecyclerHelper    : '2.9.30', // com.github.CymChad:BaseRecyclerViewAdapterHelper
-        helptutorial      : '1.0.1' // za.co.riggaroo:materialhelptutorial
+        // Star 2869 TwinklingRefreshLayout 支持下拉刷新和上拉加载的RefreshLayout,自带越界回弹效果，支持RecyclerView,AbsListView,ScrollView,WebView
+        // https://github.com/lcodecorex/TwinklingRefreshLayout
+        tkrefreshlayout   : 'com.lcodecorex:tkrefreshlayout:1.0.7',
+        // Star 8236 下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer
+        // https://github.com/scwang90/SmartRefreshLayout
+        SmartRefreshLayout: 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3',
+        SmartRefreshHeader: 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3',
+        material_dialogs  : 'com.afollestad.material-dialogs:core:0.9.6.0',
+        // https://github.com/H07000223/FlycoTabLayout, After v2.0.2(support 3.0+)
+        FlycoTabLayout    : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
+        supertoasts       : 'com.github.johnpersano:supertoasts:2.0',
+        // 俗名：可垂直跑、可水平跑的跑马灯；学名：可垂直翻、可水平翻的翻页公告, https://github.com/sfsheng0322/MarqueeView
+        marqueeview       : 'com.sunfusheng:marqueeview:1.3.3',
+        // 引导界面滑动导航 + 大于等于1页时无限轮播 + 各种切换动画轮播效果, https://github.com/bingoogolapple/BGABanner-Android
+        bga_banner        : 'cn.bingoogolapple:bga-banner:2.1.9@aar',
+        // QMUI Android 的设计目的是用于辅助快速搭建一个具备基本设计还原效果的 Android 项目, http://qmuiteam.com/android/page/index.html
+        qmui              : 'com.qmuiteam:qmui:1.0.4',
+        // Alibaba. VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题
+        vlayout           : 'com.alibaba.android:vlayout:1.2.6@aar',
+        RecyclerHelper    : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',
+        // 一个实现了material引导界面的库，类似Google Sheets, http://www.jcodecraeer.com/a/opensource/2015/1112/3680.html
+        helptutorial      : 'za.co.riggaroo:materialhelptutorial:1.0.1'
 ]
 
 
