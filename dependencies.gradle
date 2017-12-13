@@ -14,7 +14,7 @@ ext.versions = [
 
         retrolambda       : '3.2.5',
         leakcanary        : '1.5.1',
-        junit             : '4.12',
+        junit             : '4.12'
 ]
 
 ext.lib = [

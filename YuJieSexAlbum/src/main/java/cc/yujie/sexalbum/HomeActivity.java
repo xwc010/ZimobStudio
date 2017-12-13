@@ -2,6 +2,8 @@ package cc.yujie.sexalbum;
 
 import android.os.Bundle;
 
+import com.squareup.picasso.Picasso;
+
 import cc.yujie.basicplugs.YuJieBaseActivity;
 
 public class HomeActivity extends YuJieBaseActivity {
