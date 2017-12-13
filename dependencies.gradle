@@ -1,0 +1,62 @@
+ext.versions = [
+        gradlePlugin      : '2.3.3',
+
+        compileSdk        : 27,
+        buildTools        : '27.0.2',
+
+        minSdk            : 16,
+        targetSdk         : 27,
+
+        supportLib        : '27.0.1',
+        espresso_core     : '2.2.2',
+        constraint_layout : '1.0.2',
+        multidex          : '1.0.1',
+
+        retrolambda       : '3.2.5',
+        leakcanary        : '1.5.1',
+        junit             : '4.12',
+
+        logger            : '2.1.1', // com.orhanobut:logger
+        acra              : '4.9.2', // ch.acra:acra
+        easypermissions   : '1.1.0', // pub.devrel:easypermissions
+        magicasakura      : '0.1.8@aar', // com.bilibili:magicasakura
+        update            : '1.1.1', // com.github.czy1121:update
+        utilcode          : '1.9.10', // com.blankj:utilcode
+        statusbarutil     : '1.4.0', // com.jaeger.statusbarutil:library
+
+        okhttp            : '2.7.5',
+        okio              : '1.8.0',
+        aria              : '3.3.7', // com.arialyy.aria:aria-compiler, com.arialyy.aria:aria-core
+        jsoup             : '1.8.3', // org.jsoup:jsoup
+        gson              : '2.3.1',
+
+        picasso           : '2.5.2',
+        Luban             : '1.1.3', // top.zibin:Luban
+
+        agentweb          : '2.0.1', // com.just.agentweb:agentweb
+        jsbridge          : '1.0.4', // com.github.lzyzsd:jsbridge
+        markdownview      : '1.1.0', // us.feras.mdv:markdownview
+
+        ijkplayer         : '0.8.4', // tv.danmaku.ijk.media:ijkplayer
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+        jiaozivideoplayer : '6.2.2', // cn.jzvd:jiaozivideoplayer
+
+        tkrefreshlayout   : '1.0.7', // com.lcodecorex:tkrefreshlayout
+        SmartRefreshLayout: '1.0.3', // com.scwang.smartrefresh:SmartRefreshLayout
+        material_dialogs  : '0.9.6.0', // com.afollestad.material-dialogs:core
+        FlycoTabLayout    : '2.1.2@aar', // com.flyco.tablayout:FlycoTabLayout_Lib
+        supertoasts       : '2.0', // com.github.johnpersano:supertoasts
+        marqueeview       : '1.3.3', // com.sunfusheng:marqueeview
+        bga_banner        : '2.1.9@aar', // cn.bingoogolapple:bga-banner
+        qmui              : '1.0.4', // com.qmuiteam:qmui
+        vlayout           : '1.2.6@aar', // com.alibaba.android:vlayout
+        RecyclerHelper    : '2.9.30', // com.github.CymChad:BaseRecyclerViewAdapterHelper
+        helptutorial      : '1.0.1' // za.co.riggaroo:materialhelptutorial
+]
+
+

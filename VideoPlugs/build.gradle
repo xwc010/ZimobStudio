@@ -31,10 +31,10 @@ dependencies {
 
     // Android VideoPlayer MediaPlayer VideoView MediaView Float View And Fullscreen
     // https://github.com/lipangit/JiaoZiVideoPlayer
-    compile 'cn.jzvd:jiaozivideoplayer:6.2.2'
+    compile 'cn.jzvd:jiaozivideoplayer:' + versions.jiaozivideoplayer
 
     // Bilibili/ijkplayer
     // https://github.com/Bilibili/ijkplayer
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.4'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4'
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:' + versions.ijkplayer
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:' + versions.ijkplayer
 }

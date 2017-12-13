@@ -29,18 +29,17 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.google.code.gson:gson:' + versions.gson
 
-    compile 'org.jsoup:jsoup:1.8.3'
+    compile 'org.jsoup:jsoup:' + versions.jsoup
 
     // https://github.com/AriaLyy/Aria
     // Aria：简单易用、高效的下载框架
-    compile ('com.arialyy.aria:aria-core:3.3.7'){
+    compile ('com.arialyy.aria:aria-core:' + versions.aria){
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
-    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.7'
+    annotationProcessor 'com.arialyy.aria:aria-compiler:' + versions.aria
 
-    compile 'com.squareup.okhttp:okhttp:2.7.5'
-    compile 'com.squareup.okio:okio:1.8.0'
-//    compile 'javax.annotation:javax.annotation-api:1.2'
+    compile 'com.squareup.okhttp:okhttp:' + versions.okhttp
+    compile 'com.squareup.okio:okio:' + versions.okio
 }

@@ -30,11 +30,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // AgentWeb 是基于 Android WebView 一个轻量级浏览器库 ， 使用很方便 ， 集成进你应用 ，只需几行代码 。
     // https://github.com/Justson/AgentWeb
-    compile 'com.just.agentweb:agentweb:2.0.1'
+    compile 'com.just.agentweb:agentweb:' + versions.agentweb
 
     // https://github.com/lzyzsd/JsBridge
-    compile 'com.github.lzyzsd:jsbridge:1.0.4'
-    compile ('us.feras.mdv:markdownview:1.1.0'){
+    compile 'com.github.lzyzsd:jsbridge:' + versions.jsbridge
+    compile ('us.feras.mdv:markdownview:' + versions.markdownview){
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
 }
