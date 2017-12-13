@@ -3,11 +3,12 @@ package cc.yujie.appstore;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity {
+import cc.yujie.basicplugs.YuJieBaseHomeActivity;
+
+public class HomeActivity extends YuJieBaseHomeActivity {
 
     private TextView mTextMessage;
 

@@ -13,11 +13,22 @@ public class YuJieBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        updateStatusBar();
+        onInit();
+    }
+
+    public void onInit(){
+
+    }
+
+    public void updateStatusBar(){
+
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -26,7 +37,7 @@ public class YuJieBaseActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

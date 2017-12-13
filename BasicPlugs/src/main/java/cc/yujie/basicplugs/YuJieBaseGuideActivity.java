@@ -17,8 +17,8 @@ public class YuJieBaseGuideActivity extends YuJieBaseActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -27,7 +27,8 @@ public class YuJieBaseGuideActivity extends YuJieBaseActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onDestroy() {
+        super.onDestroy();
     }
+
 }

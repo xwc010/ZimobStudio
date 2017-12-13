@@ -35,6 +35,7 @@ dependencies {
     compile 'com.android.support:design:' + versions.supportLib
     compile 'com.android.support:support-vector-drawable:' + versions.supportLib
     compile 'com.android.support:recyclerview-v7:' + versions.supportLib
+    compile 'com.android.support:cardview-v7:' + versions.supportLib
     compile 'com.android.support.constraint:constraint-layout:' + versions.constraint_layout
     testCompile 'junit:junit:' + versions.junit
 
@@ -51,6 +52,7 @@ dependencies {
     compile lib.update
     compile lib.utilcode
     compile lib.statusbarutil
+    compile lib.Slidr
 
     compile project(':AdPlugs')
     compile project(':AnalyStatisPlugs')

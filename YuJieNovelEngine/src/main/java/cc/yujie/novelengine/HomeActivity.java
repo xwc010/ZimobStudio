@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import cc.yujie.basicplugs.YuJieBaseActivity;
+import cc.yujie.basicplugs.YuJieBaseHomeActivity;
 
-public class HomeActivity extends YuJieBaseActivity {
+public class HomeActivity extends YuJieBaseHomeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

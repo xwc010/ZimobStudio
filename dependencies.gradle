@@ -25,6 +25,7 @@ ext.lib = [
         update            : 'com.github.czy1121:update:1.1.1',   // 清晰灵活简单易用的应用更新库, https://github.com/czy1121/update
         utilcode          : 'com.blankj:utilcode:1.9.10',   // AndroidUtilCode https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
         statusbarutil     : 'com.jaeger.statusbarutil:library:1.4.0',   // Android App 沉浸式状态栏解决方案, https://github.com/laobie/StatusBarUtil
+        Slidr             : 'com.r0adkll:slidableactivity:2.0.6',  // 滑动退出Activity Easily add slide to dismiss functionality to an Activity， https://github.com/r0adkll/Slidr
 
         okhttp            : 'com.squareup.okhttp:okhttp:2.7.5',
         okio              : 'com.squareup.okio:okio:1.8.0',

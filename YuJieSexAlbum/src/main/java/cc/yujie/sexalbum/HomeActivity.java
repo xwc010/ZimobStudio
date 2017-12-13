@@ -2,11 +2,9 @@ package cc.yujie.sexalbum;
 
 import android.os.Bundle;
 
-import com.squareup.picasso.Picasso;
+import cc.yujie.basicplugs.YuJieBaseHomeActivity;
 
-import cc.yujie.basicplugs.YuJieBaseActivity;
-
-public class HomeActivity extends YuJieBaseActivity {
+public class HomeActivity extends YuJieBaseHomeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
