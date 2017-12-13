@@ -1,1 +1,1 @@
-include ':YuJieSmallVideo', ':YuJieSexAlbum', ':AdPlugs', ':DataPlugs', ':ImagePlugs', ':BasicPlugs', ':AnalyStatisPlugs', ':VideoPlugs', ':WebPlus', ':UIPlugs', ':YuJieSexFilm', ':YuJieBigFilm', ':YuJieSexSmallVideo', ':YuJieSecretAlarmClock', ':YuJieMindBigBang', ':YuJieBooks', ':YuJieEarnOnline', ':YuJieEconomicNews', ':YuJieBussinessNews', ':YuJieNovelEngine', ':IMPlugs'
+include ':AdPlugs', ':AnalyStatisPlugs', ':BasicPlugs', ':DataPlugs', ':ImagePlugs', ':IMPlugs', ':UIPlugs', ':VideoPlugs', ':WebPlus', ':YuJieSmallVideo', ':YuJieSexAlbum'

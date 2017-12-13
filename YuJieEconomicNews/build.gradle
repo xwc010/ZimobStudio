@@ -17,10 +17,10 @@ android {
 
     signingConfigs {
         releaseConfig {
-            storeFile file("jzvd-keystore")
-            storePassword "123456"
-            keyAlias "key0"
-            keyPassword "123456"
+            storeFile file("YuJie_KeyStore.jks")
+            storePassword "yujie010521"
+            keyAlias "Zimob"
+            keyPassword "zimob010521"
         }
     }
 
@@ -28,7 +28,12 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

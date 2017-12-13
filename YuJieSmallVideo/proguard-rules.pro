@@ -190,6 +190,20 @@
 -keepclassmembers class com.just.library.agentweb.AndroidInterface{ *; }
 -dontwarn com.just.library.**
 
+#忽略警告
+-ignorewarning
+
+#apk 包内所有 class 的内部结构
+-dump class_files.txt
+
+#未混淆的类和成员
+-printseeds seeds.txt
+
+#列出从 apk 中删除的代码
+-printusage unused.txt
+
+#混淆前后的映射
+-printmapping mapping.txt
 
 ##---------------Begin: proguard configuration for Gson  ----------
 # Gson uses generic type information stored in a class file when working with fields. Proguard
@@ -234,3 +248,25 @@
 -keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
      <init>(...);
 }
+
+#-------------- OKHttp -----------------
+-dontwarn com.squareup.okhttp.**
+
+-dontwarn java.nio.file.*
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn okio.**
+
+#-------------- Aria：简单易用、高效的下载框架 -----------------
+-dontwarn com.arialyy.aria.**
+-keep class com.arialyy.aria.**{*;}
+-keep class **$$DownloadListenerProxy{ *; }
+-keep class **$$UploadListenerProxy{ *; }
+-keep class **$$DownloadGroupListenerProxy{ *; }
+-keepclasseswithmembernames class * {
+    @Download.* <methods>;
+    @Upload.* <methods>;
+    @DownloadGroup.* <methods>;
+}
+
+#
+-keep class com.bilibili.magicasakura.widgets.TintGridLayout.**{*;}

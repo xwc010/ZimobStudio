@@ -23,6 +23,7 @@ public class YJGuideActivity extends YuJieBaseGuideActivity {
             public void run() {
                 Intent intent = new Intent(YJGuideActivity.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         }, 3000);
     }

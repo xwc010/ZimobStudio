@@ -190,6 +190,21 @@
 -keepclassmembers class com.just.library.agentweb.AndroidInterface{ *; }
 -dontwarn com.just.library.**
 
+#忽略警告
+-ignorewarning
+
+#apk 包内所有 class 的内部结构
+-dump class_files.txt
+
+#未混淆的类和成员
+-printseeds seeds.txt
+
+#列出从 apk 中删除的代码
+-printusage unused.txt
+
+#混淆前后的映射
+-printmapping mapping.txt
+
 ##---------------Begin: proguard configuration for Gson  ----------
 # Gson uses generic type information stored in a class file when working with fields. Proguard
 # removes such information by default, so configure it to keep all of it.
@@ -207,7 +222,51 @@
 
 ##---------------End: proguard configuration for Gson  ----------
 
+
 ##---------------AndroidUtilCode  ----------
 -keep class com.blankj.utilcode.** { *; }
 -keepclassmembers class com.blankj.utilcode.** { *; }
 -dontwarn com.blankj.utilcode.**
+
+
+##---------------alibaba/vlayout  ----------
+-keepattributes InnerClasses
+-keep class com.alibaba.android.vlayout.ExposeLinearLayoutManagerEx { *; }
+-keep class android.support.v7.widget.RecyclerView$LayoutParams { *; }
+-keep class android.support.v7.widget.RecyclerView$ViewHolder { *; }
+-keep class android.support.v7.widget.ChildHelper { *; }
+-keep class android.support.v7.widget.ChildHelper$Bucket { *; }
+-keep class android.support.v7.widget.RecyclerView$LayoutManager { *; }
+
+
+##--------------- BaseRecyclerViewAdapterHelper  ----------
+-keep class com.chad.library.adapter.** {
+*;
+}
+-keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
+-keep public class * extends com.chad.library.adapter.base.BaseViewHolder
+-keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
+     <init>(...);
+}
+
+#-------------- OKHttp -----------------
+-dontwarn com.squareup.okhttp.**
+
+-dontwarn java.nio.file.*
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn okio.**
+
+#-------------- Aria：简单易用、高效的下载框架 -----------------
+-dontwarn com.arialyy.aria.**
+-keep class com.arialyy.aria.**{*;}
+-keep class **$$DownloadListenerProxy{ *; }
+-keep class **$$UploadListenerProxy{ *; }
+-keep class **$$DownloadGroupListenerProxy{ *; }
+-keepclasseswithmembernames class * {
+    @Download.* <methods>;
+    @Upload.* <methods>;
+    @DownloadGroup.* <methods>;
+}
+
+#
+-keep class com.bilibili.magicasakura.widgets.TintGridLayout.**{*;}

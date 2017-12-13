@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -27,21 +31,26 @@ dependencies {
 
     // Star 2869 TwinklingRefreshLayout 支持下拉刷新和上拉加载的RefreshLayout,自带越界回弹效果，支持RecyclerView,AbsListView,ScrollView,WebView
     // https://github.com/lcodecorex/TwinklingRefreshLayout
-    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    compile ('com.lcodecorex:tkrefreshlayout:1.0.7', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
     // Star 8236 下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer
     // https://github.com/scwang90/SmartRefreshLayout
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
 
     // https://github.com/afollestad/material-dialogs
-    compile 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    compile ('com.afollestad.material-dialogs:core:0.9.6.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 
     // https://github.com/JohnPersano/SuperToasts
-    compile 'com.github.johnpersano:supertoasts:2.0'
+    compile ('com.github.johnpersano:supertoasts:2.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 
     // https://github.com/H07000223/FlycoTabLayout
     // After v2.0.2(support 3.0+)
-//    compile 'com.android.support:support-v4:23.1.1'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 
     // 俗名：可垂直跑、可水平跑的跑马灯；学名：可垂直翻、可水平翻的翻页公告
@@ -50,7 +59,6 @@ dependencies {
 
     // 引导界面滑动导航 + 大于等于1页时无限轮播 + 各种切换动画轮播效果
     // https://github.com/bingoogolapple/BGABanner-Android
-//    implementation 'com.android.support:support-v4:27.0.1'
     compile 'cn.bingoogolapple:bga-banner:2.1.9@aar'
 
     // QMUI Android 的设计目的是用于辅助快速搭建一个具备基本设计还原效果的 Android 项目
@@ -60,6 +68,7 @@ dependencies {
     // Alibaba. VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题
     compile ('com.alibaba.android:vlayout:1.2.6@aar') {
         transitive = true
+        exclude group: 'com.android.support', module: 'support-annotations'
     }
 
     // BaseRecyclerViewAdapterHelper

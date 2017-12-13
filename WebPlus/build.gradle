@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -30,5 +34,7 @@ dependencies {
 
     // https://github.com/lzyzsd/JsBridge
     compile 'com.github.lzyzsd:jsbridge:1.0.4'
-    compile 'us.feras.mdv:markdownview:1.1.0'
+    compile ('us.feras.mdv:markdownview:1.1.0'){
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
 }

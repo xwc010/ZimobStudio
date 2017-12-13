@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -31,6 +35,12 @@ dependencies {
 
     // https://github.com/AriaLyy/Aria
     // Aria：简单易用、高效的下载框架
-    compile 'com.arialyy.aria:aria-core:3.3.7'
+    compile ('com.arialyy.aria:aria-core:3.3.7'){
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
     annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.7'
+
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.squareup.okio:okio:1.8.0'
+//    compile 'javax.annotation:javax.annotation-api:1.2'
 }
