@@ -51,11 +51,11 @@ dependencies {
     compile lib.easypermissions
     compile lib.magicasakura
     compile lib.update
-    compile lib.utilcode
     compile lib.statusbarutil
     compile lib.Slidr
 
     compile project(':AdPlugs')
+    compile project(':DataPlugs')
     compile project(':AnalyStatisPlugs')
     compile project(':UIPlugs')
     compile project(':WebPlus')

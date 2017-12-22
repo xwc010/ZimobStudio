@@ -1,1 +1,1 @@
-include ':AdPlugs', ':AnalyStatisPlugs', ':BasicPlugs', ':DataPlugs', ':ImagePlugs', ':IMPlugs', ':UIPlugs', ':VideoPlugs', ':WebPlus', ':YuJieSmallVideo', ':YuJieSexAlbum'
+include ':AdPlugs', ':AnalyStatisPlugs', ':SDKPlugs', ':DataPlugs', ':ImagePlugs', ':IMPlugs', ':UIPlugs', ':VideoPlugs', ':WebPlus', ':YuJieSmallVideo', ':YuJieSexAlbum'

@@ -29,6 +29,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile lib.utilcode
     compile lib.gson
     compile lib.jsoup
     compile lib.okhttp
