@@ -1,7 +1,9 @@
 package cc.yujie.basicplugs;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -10,6 +12,9 @@ import com.orhanobut.logger.Logger;
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
+import java.util.LinkedList;
+
+import cc.yujie.basicplugs.utils.ActivityManger;
 import cc.yujie.basicplugs.utils.Utils;
 
 /**
@@ -29,12 +34,14 @@ public class YuJieBaseApplication extends Application {
             }
         });
         Utils.init(this);
+        ActivityManger.manageActivity(this);
     }
 
     @Override
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
         MultiDex.install(context);
+        // Crach 上报
         ACRA.init(this);
     }
 
