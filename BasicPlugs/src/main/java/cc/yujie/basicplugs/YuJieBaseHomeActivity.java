@@ -8,4 +8,9 @@ public class YuJieBaseHomeActivity extends YuJieBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    public boolean canSlideDismiss() {
+        return false;
+    }
 }

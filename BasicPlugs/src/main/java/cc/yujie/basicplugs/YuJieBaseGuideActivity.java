@@ -17,6 +17,11 @@ public class YuJieBaseGuideActivity extends YuJieBaseActivity {
     }
 
     @Override
+    public boolean canSlideDismiss() {
+        return false;
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
     }
