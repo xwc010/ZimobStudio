@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
@@ -33,6 +34,8 @@ public class YuJieBaseApplication extends Application {
                 return BuildConfig.DEBUG;
             }
         });
+        com.blankj.utilcode.util.Utils.init(this);
+        Logger.t(AppUtils.getAppName());
         Utils.init(this);
         ActivityManger.manageActivity(this);
     }
