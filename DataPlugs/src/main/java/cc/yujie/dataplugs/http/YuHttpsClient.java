@@ -163,7 +163,7 @@ public class YuHttpsClient implements IHttp {
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-                callBack.onError(reqTag, e);
+                callBack.onError(reqTag, HttpParam.NETWORK_ERROR, e);
             }
 
             @Override

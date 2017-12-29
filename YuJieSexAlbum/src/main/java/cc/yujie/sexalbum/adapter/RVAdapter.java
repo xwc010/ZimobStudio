@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import cc.yujie.sexalbum.modle.IData;
+import cc.yujie.sexalbum.bean.IData;
 
 /**
  * Created by xwc on 2017/12/22.

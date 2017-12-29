@@ -1,4 +1,4 @@
-package cc.yujie.sexalbum.modle;
+package cc.yujie.sexalbum.bean;
 
 /**
  * Created by xwc on 2017/12/22.

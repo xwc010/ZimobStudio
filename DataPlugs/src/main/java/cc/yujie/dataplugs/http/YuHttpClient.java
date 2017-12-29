@@ -22,9 +22,6 @@ import java.util.concurrent.TimeUnit;
 
 public class YuHttpClient implements IHttp{
 
-    private final int TIME_OUT = 20;
-    public static final int REQ_PARAMS_EMPTY = 444;
-
     private final MediaType JSON  = MediaType.parse("application/json; charset=utf-8");
     private final MediaType MEDIA_TYPE_MARKDOWN = MediaType.parse("text/x-markdown; charset=utf-8");
 
@@ -33,7 +30,7 @@ public class YuHttpClient implements IHttp{
 
     private YuHttpClient(){
         okHttpClient = new OkHttpClient();
-        okHttpClient.setConnectTimeout(TIME_OUT, TimeUnit.SECONDS);
+        okHttpClient.setConnectTimeout(HttpParam.TIME_OUT, TimeUnit.SECONDS);
     }
 
     public static YuHttpClient getInstance(){
@@ -64,7 +61,7 @@ public class YuHttpClient implements IHttp{
     @Override
     public void doPost(final String reqTag, String url, ReqParams params, final CallBack callBack) {
         if(params == null || params.isNull()){
-            callBack.onFaile(reqTag, REQ_PARAMS_EMPTY, "Request params is empty");
+            callBack.onFaile(reqTag, HttpParam.REQ_PARAMS_EMPTY, "Request params is empty");
             return;
         }
 
@@ -89,7 +86,7 @@ public class YuHttpClient implements IHttp{
     @Override
     public void doPost(final String reqTag, String url, String json, final CallBack callBack) {
         if(TextUtils.isEmpty(json)){
-            callBack.onFaile(reqTag, REQ_PARAMS_EMPTY, "Request json is empty");
+            callBack.onFaile(reqTag, HttpParam.REQ_PARAMS_EMPTY, "Request json is empty");
             return;
         }
 
@@ -116,18 +113,32 @@ public class YuHttpClient implements IHttp{
     private void action(final String reqTag, Request request, final CallBack callBack){
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(Request request, IOException e) {
-                callBack.onError(reqTag, e);
+            public void onFailure(Request request, final IOException e) {
+                HttpParam.MAIN_HANDLER.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        callBack.onError(reqTag, HttpParam.NETWORK_ERROR, e);
+                    }
+                });
             }
 
             @Override
-            public void onResponse(Response response) throws IOException {
-                if(!response.isSuccessful()){
-                    callBack.onFaile(reqTag, response.code(), response.message());
-                    return;
-                }
-
-                callBack.onSuccess(reqTag, response.code(), response.body().string());
+            public void onResponse(final Response response) {
+                HttpParam.MAIN_HANDLER.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!response.isSuccessful()){
+                            callBack.onFaile(reqTag, response.code(), response.message());
+                        }else {
+                            try {
+                                callBack.onSuccess(reqTag, response.code(), response.body().string());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                callBack.onFaile(reqTag, HttpParam.RESPONSE_ERROR, "Response IOException!");
+                            }
+                        }
+                    }
+                });
             }
         });
     }

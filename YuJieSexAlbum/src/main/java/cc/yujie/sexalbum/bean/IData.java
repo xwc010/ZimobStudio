@@ -1,4 +1,4 @@
-package cc.yujie.sexalbum.modle;
+package cc.yujie.sexalbum.bean;
 
 import java.io.Serializable;
 

@@ -1,16 +1,18 @@
-package cc.yujie.sexalbum.modle;
+package cc.yujie.sexalbum.bean;
+
+import java.util.List;
 
 /**
  * Created by xwc on 2017/12/22.
  */
 
-public class Video implements IData {
+public class Picture implements IData{
 
     private long id;
     private String name;
     private String describe;
     private String thumbnail;
-    private String res;
+    private List<String> album;
 
     public long getId() {
         return id;
@@ -44,11 +46,11 @@ public class Video implements IData {
         this.thumbnail = thumbnail;
     }
 
-    public String getRes() {
-        return res;
+    public List<String> getAlbum() {
+        return album;
     }
 
-    public void setRes(String res) {
-        this.res = res;
+    public void setAlbum(List<String> album) {
+        this.album = album;
     }
 }

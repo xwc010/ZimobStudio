@@ -5,15 +5,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.jaeger.library.StatusBarUtil;
 import com.orhanobut.logger.Logger;
+
+import java.util.List;
 
 import cc.yujie.basicplugs.YuJieBaseHomeActivity;
 import cc.yujie.basicplugs.YuJieBaseWebActivity;
 import cc.yujie.dataplugs.http.CallBack;
 import cc.yujie.dataplugs.http.YuHttpClient;
+import cc.yujie.sexalbum.bean.Tab;
+import cc.yujie.sexalbum.module.tabbar.TabContract;
+import cc.yujie.sexalbum.module.tabbar.TabPresenter;
 
-public class HomeActivity extends YuJieBaseHomeActivity {
+public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.View{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +34,23 @@ public class HomeActivity extends YuJieBaseHomeActivity {
             }
         });
 
-        Log.i("HomeActivity", "doGet -------");
-        YuHttpClient.getInstance().doGet("dd", "http://zimob.cc/mutil/app/cc.yujie.sexalbum/tab.json", new CallBack() {
-            @Override
-            public void onSuccess(String reqTag, int resultCode, String response) {
-                Log.i("HomeActivity", resultCode + response);
-            }
+        // http://zimob.cc/mutil/app/
+        TabPresenter tabPresenter = new TabPresenter(this);
+        tabPresenter.start();
+    }
 
-            @Override
-            public void onError(String reqTag, Throwable erro) {
-                Log.i("HomeActivity", "onError");
-                erro.printStackTrace();
-            }
-        });
+    @Override
+    public boolean isActive() {
+        return !isFinishing();
+    }
+
+    @Override
+    public void updateTabBar(List<Tab> tabs) {
+        ToastUtils.showShort("Tab.size = " + tabs.size());
+    }
+
+    @Override
+    public void getTabFail(int code, String msg) {
+        ToastUtils.showShort("code = " + code + "; msg: " + msg);
     }
 }

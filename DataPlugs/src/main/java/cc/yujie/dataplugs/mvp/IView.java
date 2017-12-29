@@ -5,5 +5,5 @@ package cc.yujie.dataplugs.mvp;
  */
 
 public interface IView <T extends IPresenter> {
-    public void setPresenter(T presenter);
+    public boolean isActive();
 }
