@@ -55,8 +55,8 @@ dependencies {
     compile lib.Slidr
 
     compile project(':AdPlugs')
-    compile project(':DataPlugs')
     compile project(':AnalyStatisPlugs')
+    compile project(':DataPlugs')
     compile project(':UIPlugs')
     compile project(':WebPlus')
 }

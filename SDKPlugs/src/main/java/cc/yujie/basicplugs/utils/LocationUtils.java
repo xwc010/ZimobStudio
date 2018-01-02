@@ -54,7 +54,7 @@ public final class LocationUtils {
 //                Toast.makeText(context
 //                        , " you have to open GPS or INTERNET"
 //                        , Toast.LENGTH_LONG)
-//                        .show();
+//                        .bulide();
 //            } else {
 //                if (isLocationEnabled()) {
 //                    mLocationManager.requestLocationUpdates(

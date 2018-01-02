@@ -3,6 +3,7 @@ package cc.yujie.basicplugs.utils;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.LinkedList;
 
@@ -10,9 +11,11 @@ import java.util.LinkedList;
  * Created by xwc on 2017/12/22.
  */
 
-public class ActivityManger {
+public class YActivityManager {
 
     public static final LinkedList<Activity> ACTIVITY_LINKED_LIST = new LinkedList<>();
+    public static final LinkedList<Activity> ACTIVITY_PAUSE_LIST = new LinkedList<>();
+    private static boolean doStart = false;
 
     public static void manageActivity(Application application){
         application.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
@@ -24,10 +27,12 @@ public class ActivityManger {
             @Override
             public void onActivityDestroyed(Activity activity) {
                 ACTIVITY_LINKED_LIST.remove(activity);
+                ACTIVITY_PAUSE_LIST.remove(activity);
             }
 
             @Override
             public void onActivityStarted(Activity activity) {
+                doStart = true;
             }
 
             @Override
@@ -40,6 +45,10 @@ public class ActivityManger {
 
             @Override
             public void onActivityStopped(Activity activity) {
+                doStart = false;
+                if(!ACTIVITY_PAUSE_LIST.contains(activity)){
+                    ACTIVITY_PAUSE_LIST.add(activity);
+                }
             }
 
             @Override
@@ -50,8 +59,16 @@ public class ActivityManger {
         });
     }
 
+    public static boolean isBackgroundToForeground(){
+        return !doStart && ACTIVITY_LINKED_LIST.size() <= ACTIVITY_PAUSE_LIST.size();
+    }
+
     public static void exitApp() {
         for (Activity activity : ACTIVITY_LINKED_LIST) {
+            activity.finish();
+        }
+
+        for (Activity activity : ACTIVITY_PAUSE_LIST) {
             activity.finish();
         }
 

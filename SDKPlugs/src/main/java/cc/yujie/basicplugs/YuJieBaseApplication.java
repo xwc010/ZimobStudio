@@ -1,9 +1,7 @@
 package cc.yujie.basicplugs;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.blankj.utilcode.util.AppUtils;
@@ -13,9 +11,8 @@ import com.orhanobut.logger.Logger;
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
-import java.util.LinkedList;
-
-import cc.yujie.basicplugs.utils.ActivityManger;
+import cc.yujie.adplugs.AdsAdgent;
+import cc.yujie.basicplugs.utils.YActivityManager;
 import cc.yujie.basicplugs.utils.Utils;
 
 /**
@@ -37,7 +34,9 @@ public class YuJieBaseApplication extends Application {
         com.blankj.utilcode.util.Utils.init(this);
         Logger.t(AppUtils.getAppName());
         Utils.init(this);
-        ActivityManger.manageActivity(this);
+        YActivityManager.manageActivity(this);
+
+        AdsAdgent.init(this);
     }
 
     @Override

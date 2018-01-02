@@ -39,6 +39,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':SDKPlugs')
     compile project(':DataPlugs')
-    compile project(':ImagePlugs')
     compile project(':WebPlus')
 }

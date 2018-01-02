@@ -1,20 +1,17 @@
 package cc.yujie.sexalbum;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.jaeger.library.StatusBarUtil;
-import com.orhanobut.logger.Logger;
 
 import java.util.List;
 
+import cc.yujie.adplugs.view.ExitAdDialog;
 import cc.yujie.basicplugs.YuJieBaseHomeActivity;
 import cc.yujie.basicplugs.YuJieBaseWebActivity;
-import cc.yujie.dataplugs.http.CallBack;
-import cc.yujie.dataplugs.http.YuHttpClient;
 import cc.yujie.sexalbum.bean.Tab;
 import cc.yujie.sexalbum.module.tabbar.TabContract;
 import cc.yujie.sexalbum.module.tabbar.TabPresenter;
@@ -37,6 +34,27 @@ public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.V
         // http://zimob.cc/mutil/app/
         TabPresenter tabPresenter = new TabPresenter(this);
         tabPresenter.start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void doBackgroundToForeground() {
+        ToastUtils.showLong("从后台唤醒到前台, 检查此时是否需要出广告");
+    }
+
+    @Override
+    protected AlertDialog createExitAdDialog() {
+        return ExitAdDialog.bulide(this, "http://img02.tooopen.com/images/20160514/tooopen_sy_162511376742.jpg"
+                    , "这是一条广告测试数据", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ToastUtils.showShort("点击广告");
+                    }
+                });
     }
 
     @Override
