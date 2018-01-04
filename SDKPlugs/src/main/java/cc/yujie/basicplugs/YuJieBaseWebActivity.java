@@ -1,5 +1,7 @@
 package cc.yujie.basicplugs;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -171,5 +173,10 @@ public class YuJieBaseWebActivity extends YuJieBaseActivity {
         super.onDestroy();
         //mAgentWeb.destroy();
         mAgentWeb.getWebLifeCycle().onDestroy();
+    }
+
+    public static void GO(Activity context){
+        Intent intent = new Intent(context, YuJieBaseWebActivity.class);
+        context.startActivity(intent);
     }
 }

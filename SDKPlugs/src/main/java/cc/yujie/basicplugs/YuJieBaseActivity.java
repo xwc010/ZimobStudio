@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.jaeger.library.StatusBarUtil;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
@@ -23,7 +22,6 @@ public class YuJieBaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        onInit();
         // 初始化滑动退出界面参数
         if (canSlideDismiss()) {
             SlidrConfig config = new SlidrConfig.Builder()
@@ -49,6 +47,7 @@ public class YuJieBaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
         updateStatusBar();
+        initUI();
     }
 
     /**
@@ -60,7 +59,7 @@ public class YuJieBaseActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onInit() {
+    public void initUI() {
 
     }
 

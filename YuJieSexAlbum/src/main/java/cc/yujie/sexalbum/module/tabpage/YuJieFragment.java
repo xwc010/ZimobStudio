@@ -1,4 +1,4 @@
-package cc.yujie.basicplugs;
+package cc.yujie.sexalbum.module.tabpage;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,12 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 /**
  * Created by xwc on 2017/12/11.
  */
 
-public class YuJieBaseFragment extends Fragment {
+public class YuJieFragment extends Fragment {
 
     //Fragment的View加载完毕的标记
     private boolean isViewCreated = false;
@@ -28,6 +29,14 @@ public class YuJieBaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(cc.yujie.basicplugs.R.layout.fragment_nested_listview, container, false);
+
+        return view;
     }
 
     @Override

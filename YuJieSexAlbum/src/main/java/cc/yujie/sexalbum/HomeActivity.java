@@ -1,8 +1,10 @@
 package cc.yujie.sexalbum;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.blankj.utilcode.util.ToastUtils;
@@ -11,29 +13,40 @@ import java.util.List;
 
 import cc.yujie.adplugs.view.ExitAdDialog;
 import cc.yujie.basicplugs.YuJieBaseHomeActivity;
-import cc.yujie.basicplugs.YuJieBaseWebActivity;
+import cc.yujie.basicplugs.adapter.BaseFragmentPagerAdapter;
 import cc.yujie.sexalbum.bean.Tab;
 import cc.yujie.sexalbum.module.tabbar.TabContract;
 import cc.yujie.sexalbum.module.tabbar.TabPresenter;
+import cc.yujie.sexalbum.module.tabpage.PageFragment;
 
 public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.View{
+
+    private Toolbar mToolbar;
+    private TabLayout topTabLayout;
+    private ViewPager mViewPager;
+    private List<Tab> mTabRes;
+    private BaseFragmentPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, YuJieBaseWebActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // http://zimob.cc/mutil/app/
         TabPresenter tabPresenter = new TabPresenter(this);
         tabPresenter.start();
+
+    }
+
+    @Override
+    public void initUI() {
+        super.initUI();
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(R.string.app_name);
+        topTabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mViewPager.setOffscreenPageLimit(3);
+        pagerAdapter = new BaseFragmentPagerAdapter(getSupportFragmentManager());
     }
 
     @Override
@@ -64,7 +77,17 @@ public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.V
 
     @Override
     public void updateTabBar(List<Tab> tabs) {
-        ToastUtils.showShort("Tab.size = " + tabs.size());
+        mTabRes = tabs;
+
+        for (Tab tab : mTabRes) {
+//            topTabLayout.addTab(topTabLayout.newTab().setText(tab.getName()).setTag(tab));
+            PageFragment pageFragment = new PageFragment();
+            pageFragment.setTab(tab);
+            pagerAdapter.addFragment(pageFragment, tab.getName());
+        }
+
+        mViewPager.setAdapter(pagerAdapter);
+        topTabLayout.setupWithViewPager(mViewPager, false);
     }
 
     @Override
