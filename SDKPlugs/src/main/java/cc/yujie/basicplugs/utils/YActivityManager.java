@@ -37,6 +37,7 @@ public class YActivityManager {
 
             @Override
             public void onActivityResumed(Activity activity) {
+                IP.initNetIp();
             }
 
             @Override

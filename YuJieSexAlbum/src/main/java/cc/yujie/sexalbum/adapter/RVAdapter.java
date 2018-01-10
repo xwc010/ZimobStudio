@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import cc.yujie.sexalbum.bean.IData;
+import cc.yujie.sexalbum.bean.Feed;
 
 /**
  * Created by xwc on 2017/12/22.
@@ -13,9 +13,9 @@ import cc.yujie.sexalbum.bean.IData;
 
 public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<IData> mDataList;
+    private List<Feed> mDataList;
 
-    public RVAdapter(List<IData> mDataList) {
+    public RVAdapter(List<Feed> mDataList) {
         this.mDataList = mDataList;
     }
 

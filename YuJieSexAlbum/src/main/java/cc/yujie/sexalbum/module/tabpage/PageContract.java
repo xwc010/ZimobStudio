@@ -4,7 +4,7 @@ import java.util.List;
 
 import cc.yujie.dataplugs.mvp.IPresenter;
 import cc.yujie.dataplugs.mvp.IView;
-import cc.yujie.sexalbum.bean.IData;
+import cc.yujie.sexalbum.bean.Feed;
 
 /**
  * Created by xwc on 2017/12/29.
@@ -13,7 +13,7 @@ import cc.yujie.sexalbum.bean.IData;
 public interface PageContract {
 
     interface View extends IView<Presenter> {
-        void onSuccess(List<IData> datas);
+        void onSuccess(List<Feed> datas);
         void onFail(int code);
     }
 

@@ -39,6 +39,8 @@ ext.lib = [
 
         // AgentWeb 是基于 Android WebView 一个轻量级浏览器库 ， 使用很方便 ， 集成进你应用 ，只需几行代码 。 https://github.com/Justson/AgentWeb
         agentweb          : 'com.just.agentweb:agentweb:3.0.0-rc',
+        // android java and javascript bridge, inspired by wechat webview jsbridge
+        // https://github.com/lzyzsd/JsBridge
         jsbridge          : 'com.github.lzyzsd:jsbridge:1.0.4',
         markdownview      : 'us.feras.mdv:markdownview:1.1.0',
 
@@ -55,9 +57,11 @@ ext.lib = [
         // https://github.com/scwang90/SmartRefreshLayout
         SmartRefreshLayout: 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3',
         SmartRefreshHeader: 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3',
+        // https://github.com/afollestad/material-dialogs
         material_dialogs  : 'com.afollestad.material-dialogs:core:0.9.6.0',
         // https://github.com/H07000223/FlycoTabLayout, After v2.0.2(support 3.0+)
         FlycoTabLayout    : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
+        // https://github.com/JohnPersano/SuperToasts
         supertoasts       : 'com.github.johnpersano:supertoasts:2.0',
         // 俗名：可垂直跑、可水平跑的跑马灯；学名：可垂直翻、可水平翻的翻页公告, https://github.com/sfsheng0322/MarqueeView
         marqueeview       : 'com.sunfusheng:marqueeview:1.3.3',
@@ -67,6 +71,7 @@ ext.lib = [
         qmui              : 'com.qmuiteam:qmui:1.0.4',
         // Alibaba. VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题
         vlayout           : 'com.alibaba.android:vlayout:1.2.6@aar',
+        // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
         RecyclerHelper    : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',
         // 一个实现了material引导界面的库，类似Google Sheets, http://www.jcodecraeer.com/a/opensource/2015/1112/3680.html
         helptutorial      : 'za.co.riggaroo:materialhelptutorial:1.0.1'

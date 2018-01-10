@@ -1,14 +1,16 @@
 package cc.yujie.sexalbum.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by xwc on 2017/12/22.
  */
 
-public class Tab {
+public class Tab implements Serializable{
     private long id;
     private String name; // Tab 名称
     private String icon; // Tab Icon url
-    private String datasUrl; // Tab 数据文件Url
+    private String datasUrl; // Tab 接口Url
 
     public long getId() {
         return id;

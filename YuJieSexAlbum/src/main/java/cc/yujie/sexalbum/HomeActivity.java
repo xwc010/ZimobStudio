@@ -57,6 +57,9 @@ public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.V
     @Override
     public void doBackgroundToForeground() {
         ToastUtils.showLong("从后台唤醒到前台, 检查此时是否需要出广告");
+        if(mViewPager != null){
+            mViewPager.setCurrentItem(0, false);
+        }
     }
 
     @Override
