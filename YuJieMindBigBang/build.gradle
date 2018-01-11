@@ -40,10 +40,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
-    compile project(':BasicPlugs')
-    compile project(':DataPlugs')
-    compile project(':ImagePlugs')
-    compile project(':WebPlus')
+    compile project(':YuJieLibs')
 }
 

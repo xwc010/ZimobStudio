@@ -6,13 +6,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 
-import cc.yujie.basicplugs.YuJieBaseGuideActivity;
+import cc.zimo.basicplugs.ZiMoBaseGuideActivity;
 
 /**
  * Created by xwc on 2017/12/11.
  */
 
-public class YJGuideActivity extends YuJieBaseGuideActivity {
+public class YJGuideActivity extends ZiMoBaseGuideActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

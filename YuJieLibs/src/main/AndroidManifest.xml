@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cc.yujie.libs">
+
+    <application>
+        <activity android:name="cc.yujie.libs.YuJieAblumActivity"></activity>
+    </application>
+
+</manifest>

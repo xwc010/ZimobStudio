@@ -2,9 +2,9 @@ package cc.yujie.sexalbum.module.tabpage;
 
 import java.util.List;
 
-import cc.yujie.dataplugs.mvp.IPresenter;
-import cc.yujie.dataplugs.mvp.IView;
-import cc.yujie.sexalbum.bean.Feed;
+import cc.zimo.dataplugs.mvp.IPresenter;
+import cc.zimo.dataplugs.mvp.IView;
+import cc.yujie.libs.model.Feed;
 
 /**
  * Created by xwc on 2017/12/29.

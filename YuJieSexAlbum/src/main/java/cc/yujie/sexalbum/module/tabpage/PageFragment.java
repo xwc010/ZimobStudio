@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import cc.yujie.basicplugs.ui.NestedRecyclerFragment;
+import cc.zimo.basicplugs.ui.NestedRecyclerFragment;
 import cc.yujie.sexalbum.R;
-import cc.yujie.sexalbum.bean.Tab;
+import cc.yujie.libs.model.Tab;
 
 /**
  * Created by xwc on 2018/1/4.

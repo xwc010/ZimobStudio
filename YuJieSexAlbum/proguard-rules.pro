@@ -218,7 +218,7 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class cc.yujie.sexalbum.bean.** { *; }
+-keep class cc.yujie.libs.model.** { *; }
 
 ##---------------End: proguard configuration for Gson  ----------
 

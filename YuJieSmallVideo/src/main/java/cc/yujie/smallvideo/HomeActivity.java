@@ -6,9 +6,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import cc.yujie.basicplugs.YuJieBaseHomeActivity;
+import cc.zimo.basicplugs.ZiMoBaseHomeActivity;
 
-public class HomeActivity extends YuJieBaseHomeActivity {
+public class HomeActivity extends ZiMoBaseHomeActivity {
 
     private TextView mTextMessage;
 

@@ -11,15 +11,15 @@ import com.blankj.utilcode.util.ToastUtils;
 
 import java.util.List;
 
-import cc.yujie.adplugs.view.ExitAdDialog;
-import cc.yujie.basicplugs.YuJieBaseHomeActivity;
-import cc.yujie.basicplugs.adapter.BaseFragmentPagerAdapter;
-import cc.yujie.sexalbum.bean.Tab;
+import cc.zimo.adplugs.view.ExitAdDialog;
+import cc.zimo.basicplugs.ZiMoBaseHomeActivity;
+import cc.zimo.basicplugs.adapter.BaseFragmentPagerAdapter;
+import cc.yujie.libs.model.Tab;
 import cc.yujie.sexalbum.module.tabbar.TabContract;
 import cc.yujie.sexalbum.module.tabbar.TabPresenter;
 import cc.yujie.sexalbum.module.tabpage.PageFragment;
 
-public class HomeActivity extends YuJieBaseHomeActivity implements TabContract.View{
+public class HomeActivity extends ZiMoBaseHomeActivity implements TabContract.View{
 
     private Toolbar mToolbar;
     private TabLayout topTabLayout;

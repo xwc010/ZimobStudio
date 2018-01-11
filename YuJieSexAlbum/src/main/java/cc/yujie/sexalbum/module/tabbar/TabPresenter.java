@@ -11,10 +11,10 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import cc.yujie.dataplugs.http.CallBack;
-import cc.yujie.dataplugs.http.HttpParam;
-import cc.yujie.dataplugs.http.YuHttpClient;
-import cc.yujie.sexalbum.bean.Tab;
+import cc.zimo.dataplugs.http.CallBack;
+import cc.zimo.dataplugs.http.HttpParam;
+import cc.zimo.dataplugs.http.ZiMoHttpClient;
+import cc.yujie.libs.model.Tab;
 
 /**
  * Created by xwc on 2017/12/29.
@@ -31,7 +31,7 @@ public class TabPresenter implements TabContract.Presenter {
 
     @Override
     public void start() {
-        YuHttpClient.getInstance().doGet("dd", "http://zimob.cc/mutil/app/cc.yujie.sexalbum/tab.json", new CallBack() {
+        ZiMoHttpClient.getInstance().doGet("dd", "http://zimob.cc/mutil/app/cc.yujie.sexalbum/tab.json", new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
                 Log.i(TAG, resultCode + " - " + response);

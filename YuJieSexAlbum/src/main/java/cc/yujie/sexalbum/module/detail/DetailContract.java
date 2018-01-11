@@ -1,7 +1,7 @@
 package cc.yujie.sexalbum.module.detail;
 
-import cc.yujie.dataplugs.mvp.IPresenter;
-import cc.yujie.dataplugs.mvp.IView;
+import cc.zimo.dataplugs.mvp.IPresenter;
+import cc.zimo.dataplugs.mvp.IView;
 
 /**
  * Created by xwc on 2017/12/29.

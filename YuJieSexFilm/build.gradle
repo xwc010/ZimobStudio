@@ -36,10 +36,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
-    compile project(':BasicPlugs')
-    compile project(':DataPlugs')
-    compile project(':ImagePlugs')
-    compile project(':VideoPlugs')
-    compile project(':WebPlus')
+    compile project(':ZiMoSDKPlugs')
+    compile project(':ZiMoVideoPlugs')
 }
