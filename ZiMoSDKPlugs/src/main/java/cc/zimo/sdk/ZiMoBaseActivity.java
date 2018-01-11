@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs;
+package cc.zimo.sdk;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
 import com.r0adkll.slidr.model.SlidrPosition;
 
-import cc.zimo.basicplugs.utils.ActivityManager;
+import cc.zimo.sdk.utils.ActivityManager;
 
 /**
  * Created by xwc on 2017/12/11.
@@ -67,7 +67,7 @@ public class ZiMoBaseActivity extends AppCompatActivity {
      * 沉浸式模式状态栏颜色
      */
     public void updateStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(cc.zimo.basicplugs.R.color.basePrimary), 20); // StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA
+        StatusBarUtil.setColor(this, getResources().getColor(cc.zimo.sdk.R.color.basePrimary), 20); // StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA
     }
 
     @Override

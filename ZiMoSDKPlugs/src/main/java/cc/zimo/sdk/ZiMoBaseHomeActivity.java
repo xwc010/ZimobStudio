@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs;
+package cc.zimo.sdk;
 
 import android.app.AlertDialog;
 import android.os.Bundle;

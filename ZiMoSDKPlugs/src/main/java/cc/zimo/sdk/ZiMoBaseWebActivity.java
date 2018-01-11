@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs;
+package cc.zimo.sdk;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -23,7 +23,7 @@ import com.just.agentweb.ChromeClientCallbackManager;
 import com.just.agentweb.DefaultWebClient;
 import com.orhanobut.logger.Logger;
 
-import cc.zimo.basicplugs.widget.WebLayout;
+import cc.zimo.sdk.widget.WebLayout;
 
 public class ZiMoBaseWebActivity extends ZiMoBaseActivity {
 
@@ -36,13 +36,13 @@ public class ZiMoBaseWebActivity extends ZiMoBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(cc.zimo.basicplugs.R.layout.activity_base_web);
+        setContentView(cc.zimo.sdk.R.layout.activity_base_web);
 
-        mLinearLayout = (LinearLayout) this.findViewById(cc.zimo.basicplugs.R.id.container);
-        mToolbar = (Toolbar) this.findViewById(cc.zimo.basicplugs.R.id.toolbar);
+        mLinearLayout = (LinearLayout) this.findViewById(cc.zimo.sdk.R.id.container);
+        mToolbar = (Toolbar) this.findViewById(cc.zimo.sdk.R.id.toolbar);
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setTitle("");
-        mTitleTextView = (TextView) this.findViewById(cc.zimo.basicplugs.R.id.toolbar_title);
+        mTitleTextView = (TextView) this.findViewById(cc.zimo.sdk.R.id.toolbar_title);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null)
             // Enable the Up button
@@ -63,11 +63,11 @@ public class ZiMoBaseWebActivity extends ZiMoBaseActivity {
                 .setReceivedTitleCallback(mCallback)
                 .setWebChromeClient(mWebChromeClient)
                 .setWebViewClient(mWebViewClient)
-                .setMainFrameErrorView(cc.zimo.basicplugs.R.layout.agentweb_error_page, -1)
+                .setMainFrameErrorView(cc.zimo.sdk.R.layout.agentweb_error_page, -1)
                 .setSecurityType(AgentWeb.SecurityType.strict)
                 .setWebLayout(new WebLayout(this))
                 .openParallelDownload()//打开并行下载 , 默认串行下载
-                .setNotifyIcon(cc.zimo.basicplugs.R.mipmap.download) //下载图标
+                .setNotifyIcon(cc.zimo.sdk.R.mipmap.download) //下载图标
                 .setOpenOtherAppWays(DefaultWebClient.OpenOtherAppWays.ASK)//打开其他应用时，弹窗咨询用户是否前往其他应用
                 .interceptUnkownScheme() //拦截找不到相关页面的Scheme
                 .createAgentWeb()//

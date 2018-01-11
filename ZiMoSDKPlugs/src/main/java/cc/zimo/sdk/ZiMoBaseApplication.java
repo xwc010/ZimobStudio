@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs;
+package cc.zimo.sdk;
 
 import android.app.Application;
 import android.content.Context;
@@ -11,10 +11,9 @@ import com.orhanobut.logger.Logger;
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
-import cc.zimo.basicplugs.BuildConfig;
 import cc.zimo.adplugs.ZiMoAdsAdgent;
-import cc.zimo.basicplugs.utils.ActivityManager;
-import cc.zimo.basicplugs.utils.Utils;
+import cc.zimo.sdk.utils.ActivityManager;
+import cc.zimo.sdk.utils.Utils;
 
 /**
  * Created by xwc on 2017/12/11.

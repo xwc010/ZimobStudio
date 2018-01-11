@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import cc.zimo.basicplugs.ui.NestedRecyclerFragment;
+import cc.zimo.sdk.ui.NestedRecyclerFragment;
 import cc.yujie.sexalbum.R;
 import cc.yujie.libs.model.Tab;
 

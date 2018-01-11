@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs;
+package cc.zimo.sdk;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +13,7 @@ public class ZiMoBaseGuideActivity extends ZiMoBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(cc.zimo.basicplugs.R.layout.activity_basic_guide);
+        setContentView(cc.zimo.sdk.R.layout.activity_basic_guide);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs.utils;
+package cc.zimo.sdk.utils;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;

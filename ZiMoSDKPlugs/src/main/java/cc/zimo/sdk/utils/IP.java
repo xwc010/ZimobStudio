@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs.utils;
+package cc.zimo.sdk.utils;
 
 import android.text.TextUtils;
 

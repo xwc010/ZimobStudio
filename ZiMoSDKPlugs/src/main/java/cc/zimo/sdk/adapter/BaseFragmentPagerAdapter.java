@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs.adapter;
+package cc.zimo.sdk.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

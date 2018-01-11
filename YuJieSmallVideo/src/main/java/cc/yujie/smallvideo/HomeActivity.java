@@ -6,7 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import cc.zimo.basicplugs.ZiMoBaseHomeActivity;
+import cc.zimo.sdk.ZiMoBaseHomeActivity;
 
 public class HomeActivity extends ZiMoBaseHomeActivity {
 

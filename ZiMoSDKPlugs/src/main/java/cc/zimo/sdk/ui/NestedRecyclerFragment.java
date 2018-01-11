@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs.ui;
+package cc.zimo.sdk.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cc.zimo.basicplugs.R;
-import cc.zimo.basicplugs.ZiMoBaseFragment;
+import cc.zimo.sdk.R;
+import cc.zimo.sdk.ZiMoBaseFragment;
 
 /**
  * Created by xwc on 2018/1/4.

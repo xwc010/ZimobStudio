@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 
-import cc.zimo.basicplugs.ZiMoBaseGuideActivity;
+import cc.zimo.sdk.ZiMoBaseGuideActivity;
 
 /**
  * Created by xwc on 2017/12/11.

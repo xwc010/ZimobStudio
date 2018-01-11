@@ -1,4 +1,4 @@
-package cc.zimo.basicplugs.widget;
+package cc.zimo.sdk.widget;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import com.just.agentweb.IWebLayout;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
-import cc.zimo.basicplugs.R;
+import cc.zimo.sdk.R;
 
 /**
  * Created by cenxiaozhong on 2017/7/1.

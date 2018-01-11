@@ -1,6 +1,6 @@
 package cc.yujie.libs;
 
-import cc.zimo.basicplugs.ZiMoBaseFragment;
+import cc.zimo.sdk.ZiMoBaseFragment;
 
 /**
  * Created by xwc on 2018/1/11.

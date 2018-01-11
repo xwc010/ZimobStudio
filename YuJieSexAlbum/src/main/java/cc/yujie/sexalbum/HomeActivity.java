@@ -12,8 +12,8 @@ import com.blankj.utilcode.util.ToastUtils;
 import java.util.List;
 
 import cc.zimo.adplugs.view.ExitAdDialog;
-import cc.zimo.basicplugs.ZiMoBaseHomeActivity;
-import cc.zimo.basicplugs.adapter.BaseFragmentPagerAdapter;
+import cc.zimo.sdk.ZiMoBaseHomeActivity;
+import cc.zimo.sdk.adapter.BaseFragmentPagerAdapter;
 import cc.yujie.libs.model.Tab;
 import cc.yujie.sexalbum.module.tabbar.TabContract;
 import cc.yujie.sexalbum.module.tabbar.TabPresenter;
