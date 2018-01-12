@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="zimo_ads_color_primary">#333</color>
+    <color name="zimo_ads_color_secondary">#555</color>
+    <color name="zimo_ads_color_tertiary">#777</color>
+    <color name="zimo_ads_color_gray">#eee</color>
+</resources>

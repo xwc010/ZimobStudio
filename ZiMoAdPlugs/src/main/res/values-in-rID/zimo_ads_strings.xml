@@ -1,0 +1,26 @@
+<resources>
+    <!--印尼语-->
+    <string name="zimo_ads_more">Lebih</string>
+    <string name="zimo_ads_cancel">dibatalkan</string>
+    <string name="zimo_ads_no">tidak</string>
+    <string name="zimo_ads_yes">ya</string>
+    <string name="zimo_ads_install">Instalasi</string>
+    <string name="zimo_ads_close">Mati</string>
+    <string name="zimo_ads_offer_tip">Download dan jalankan.</string>
+    <string name="zimo_ads_offer_tip_free">Gratis</string>
+    <string name="zimo_ads_offer_tip_earn">Dapatkan</string>
+    <string name="zimo_ads_offer_complete_action">Menyelesaikan langkah ini</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">Aplikasi gratis klasik</string>
+    <string name="zimo_ads_offer_start">Mulai</string>
+    <string name="zimo_ads_offer_next">Berikutnya</string>
+    <string name="zimo_ads_offer_tip_title">daftar tugas</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">Download</string>
+    <string name="zimo_ads_exit_tip_text">Apakah Anda yakin untuk Keluar?</string>
+    <string name="zimo_ads_exit">Keluar</string>
+    <string name="zimo_ads_exit_app">keluar App</string>
+    <string name="zimo_ads_more_app">lebih App</string>
+    <string name="zimo_ads_follow">Mengikuti</string>
+    <string name="zimo_ads_do_you_like">Apakah Anda menyukai aplikasi ini?</string>
+</resources>

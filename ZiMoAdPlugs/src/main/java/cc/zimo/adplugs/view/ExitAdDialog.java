@@ -30,7 +30,7 @@ public class ExitAdDialog {
     public static AlertDialog bulide(final Activity context, String adImgURL, String describe, final View.OnClickListener clickListener) {
         View view = null;
         if(!TextUtils.isEmpty(adImgURL) && !TextUtils.isEmpty(describe)){
-            view = LayoutInflater.from(context).inflate(R.layout.view_ads_exit_dialog, null, false);
+            view = LayoutInflater.from(context).inflate(R.layout.zimo_ads_exit_dialog, null, false);
             ImageView adImg = (ImageView) view.findViewById(R.id.img_ads_exit_diaolg);
             ZiMoImgLoader.getInstance().loadImg(adImgURL, adImg);
             TextView adDesc = (TextView) view.findViewById(R.id.tv_ads_exit_diaolg);

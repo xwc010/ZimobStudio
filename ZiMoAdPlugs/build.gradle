@@ -29,4 +29,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':ZiMoImagePlugs')
+    compile project(':ZiMoAnalyStatisPlugs')
+
+    compile 'com.duapps.sdk:duapps-ads:1.1.1.0'
+    compile 'com.duvideo.sdk:duvideo-sdk:1.0.2'
+    compile 'com.adxmi.sdk:adxmi-ads:2.0.0'
 }

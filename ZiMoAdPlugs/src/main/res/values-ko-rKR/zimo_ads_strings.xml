@@ -1,0 +1,26 @@
+<resources>
+    <!--韩语-->
+    <string name="zimo_ads_more">더</string>
+    <string name="zimo_ads_cancel">취소</string>
+    <string name="zimo_ads_no">아니</string>
+    <string name="zimo_ads_yes">네</string>
+    <string name="zimo_ads_install">설치</string>
+    <string name="zimo_ads_close">끔</string>
+    <string name="zimo_ads_offer_tip">다운로드 및 실행</string>
+    <string name="zimo_ads_offer_tip_free">무료</string>
+    <string name="zimo_ads_offer_tip_earn">벌다</string>
+    <string name="zimo_ads_offer_complete_action">몇 가지 단계를 완료</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">클래식 무료 앱</string>
+    <string name="zimo_ads_offer_start">스타트</string>
+    <string name="zimo_ads_offer_next">다음 것</string>
+    <string name="zimo_ads_offer_tip_title">작업 목록</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">다운로드</string>
+    <string name="zimo_ads_exit_tip_text">종료 하시겠습니까?</string>
+    <string name="zimo_ads_exit">출구</string>
+    <string name="zimo_ads_exit_app">앱 종료</string>
+    <string name="zimo_ads_more_app">더 많은 앱</string>
+    <string name="zimo_ads_follow">따르다</string>
+    <string name="zimo_ads_do_you_like">이 앱이 마음에 드십니까?</string>
+</resources>

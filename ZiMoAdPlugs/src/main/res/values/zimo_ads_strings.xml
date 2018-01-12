@@ -1,0 +1,26 @@
+<resources>
+    <string name="zimo_ads_exit_tip_text">Are you sure to Exit?</string>
+    <string name="zimo_ads_exit">Exit</string>
+    <string name="zimo_ads_more">More</string>
+    <string name="zimo_ads_cancel">Cancel</string>
+    <string name="zimo_ads_no">No</string>
+    <string name="zimo_ads_yes">Yes</string>
+    <string name="zimo_ads_exit_app">Exit App</string>
+    <string name="zimo_ads_more_app">More App</string>
+    <string name="zimo_ads_install">Install</string>
+    <string name="zimo_ads_close">Close</string>
+    <string name="zimo_ads_follow">Follow</string>
+    <string name="zimo_ads_do_you_like">Do you like this app?</string>
+    <string name="zimo_ads_offer_tip">Download and run this app.</string>
+    <string name="zimo_ads_offer_tip_free">Free</string>
+    <string name="zimo_ads_offer_tip_earn">Earn</string>
+    <string name="zimo_ads_offer_complete_action">Complete a quick action.</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">Classic Free Apps</string>
+    <string name="zimo_ads_offer_start">Start</string>
+    <string name="zimo_ads_offer_next">Next</string>
+    <string name="zimo_ads_offer_tip_title">Task List</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">Download</string>
+    <string name="zimo_ads_adTag">Sponsored</string>
+</resources>

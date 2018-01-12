@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BasicPlugs</string>
+    <string name="app_cache_toast_text">BasicPlugs</string>
 </resources>

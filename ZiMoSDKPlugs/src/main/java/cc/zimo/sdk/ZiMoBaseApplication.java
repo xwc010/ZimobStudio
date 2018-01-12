@@ -26,17 +26,10 @@ public class ZiMoBaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Logger.addLogAdapter(new AndroidLogAdapter() {
-            @Override public boolean isLoggable(int priority, String tag) {
-                return BuildConfig.DEBUG;
-            }
-        });
-        com.blankj.utilcode.util.Utils.init(this);
-        Logger.t(AppUtils.getAppName());
-        Utils.init(this);
         ActivityManager.manageActivity(this);
+        ZiMoAdsAdgent.initAppliction(this);
 
-        ZiMoAdsAdgent.init(this);
+        Utils.init(this);
     }
 
     @Override

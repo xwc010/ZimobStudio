@@ -1,0 +1,26 @@
+<resources>
+    <!--日语-->
+    <string name="zimo_ads_more">もっと</string>
+    <string name="zimo_ads_cancel">キャンセル</string>
+    <string name="zimo_ads_no">いいえ</string>
+    <string name="zimo_ads_yes">はい</string>
+    <string name="zimo_ads_install">インストール</string>
+    <string name="zimo_ads_close">オフ</string>
+    <string name="zimo_ads_offer_tip">インストールして実行</string>
+    <string name="zimo_ads_offer_tip_free">無料</string>
+    <string name="zimo_ads_offer_tip_earn">獲得します</string>
+    <string name="zimo_ads_offer_complete_action">いくつかのステップを完了して下さい</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">クラシック無料アプリ</string>
+    <string name="zimo_ads_offer_start">開始</string>
+    <string name="zimo_ads_offer_next">次</string>
+    <string name="zimo_ads_offer_tip_title">タスクリスト</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">ダウンロード</string>
+    <string name="zimo_ads_exit_tip_text">あなたは本当に退出しますか？</string>
+    <string name="zimo_ads_exit">出口</string>
+    <string name="zimo_ads_exit_app">ヒント</string>
+    <string name="zimo_ads_more_app">より多くのアプリ</string>
+    <string name="zimo_ads_follow">フォローする</string>
+    <string name="zimo_ads_do_you_like">このアプリが好きですか？</string>
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="zimo_ads_dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="zimo_ads_activity" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:windowAnimationStyle">@style/yifants_activity_anim</item>-->
+    </style>
+
+    <style name="zimo_ads_dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/zimo_ads_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/zimo_ads_dialog_exit</item>
+    </style>
+
+    <style name="zimo_ads_activity_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/zimo_ads_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/zimo_ads_dialog_exit</item>
+    </style>
+
+</resources>

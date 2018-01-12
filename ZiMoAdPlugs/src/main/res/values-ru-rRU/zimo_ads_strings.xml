@@ -1,0 +1,26 @@
+<resources>
+    <!--俄语-->
+    <string name="zimo_ads_more">более</string>
+    <string name="zimo_ads_cancel">отменен</string>
+    <string name="zimo_ads_no">Нет</string>
+    <string name="zimo_ads_yes">Да</string>
+    <string name="zimo_ads_install">устанавливать</string>
+    <string name="zimo_ads_close">выкл.</string>
+    <string name="zimo_ads_offer_tip">Скачать и запустить.</string>
+    <string name="zimo_ads_offer_tip_free">бесплатно</string>
+    <string name="zimo_ads_offer_tip_earn">зарабатывать</string>
+    <string name="zimo_ads_offer_complete_action">Выполните следующие действия</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">Классические бесплатные</string>
+    <string name="zimo_ads_offer_start">Начало</string>
+    <string name="zimo_ads_offer_next">следующий</string>
+    <string name="zimo_ads_offer_tip_title">список задач</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">скачать</string>
+    <string name="zimo_ads_exit_tip_text">Вы уверены, что хотите выйти?</string>
+    <string name="zimo_ads_exit">Выход</string>
+    <string name="zimo_ads_exit_app">Выйти из приложения</string>
+    <string name="zimo_ads_more_app">Больше приложений</string>
+    <string name="zimo_ads_follow">следить</string>
+    <string name="zimo_ads_do_you_like">Вам нравится это приложение?</string>
+</resources>

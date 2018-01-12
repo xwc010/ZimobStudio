@@ -46,17 +46,12 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + versions.leakcanary
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + versions.leakcanary
 
-    compile lib.logger
     compile lib.acra
     compile lib.easypermissions
     compile lib.magicasakura
     compile lib.update
-    compile lib.statusbarutil
-    compile lib.Slidr
 
     compile project(':ZiMoAdPlugs')
-    compile project(':ZiMoAnalyStatisPlugs')
-    compile project(':ZiMoDataPlugs')
     compile project(':ZiMoUIPlugs')
     compile project(':ZiMoWebPlus')
 }

@@ -1,0 +1,26 @@
+<resources>
+    <string name="zimo_ads_exit_tip_text">确认退出吗？</string>
+    <string name="zimo_ads_exit">退出</string>
+    <string name="zimo_ads_more">更多</string>
+    <string name="zimo_ads_cancel">Cancel</string>
+    <string name="zimo_ads_no">否</string>
+    <string name="zimo_ads_yes">是</string>
+    <string name="zimo_ads_exit_app">退出应用</string>
+    <string name="zimo_ads_more_app">更多应用</string>
+    <string name="zimo_ads_install">安装</string>
+    <string name="zimo_ads_close">关闭</string>
+    <string name="zimo_ads_follow">关注</string>
+    <string name="zimo_ads_do_you_like">你喜欢这个应用吗?</string>
+    <string name="zimo_ads_offer_tip">下载并运行本应用</string>
+    <string name="zimo_ads_offer_tip_free">免费</string>
+    <string name="zimo_ads_offer_tip_earn">赚取</string>
+    <string name="zimo_ads_offer_complete_action">完成这些步骤</string>
+    <string name="zimo_ads_play_now">马上玩</string>
+    <string name="zimo_ads_more_classic_apps">经典免费应用</string>
+    <string name="zimo_ads_offer_start">开始</string>
+    <string name="zimo_ads_offer_next">下一步</string>
+    <string name="zimo_ads_offer_tip_title">任务列表</string>
+    <string name="zimo_ads_start_now">现在开始</string>
+    <string name="zimo_ads_download">下载</string>
+    <string name="zimo_ads_adTag">广告</string>
+</resources>

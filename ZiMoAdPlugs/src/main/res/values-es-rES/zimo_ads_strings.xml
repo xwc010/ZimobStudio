@@ -1,0 +1,26 @@
+<resources>
+    <!--西班牙-->
+    <string name="zimo_ads_more">Más</string>
+    <string name="zimo_ads_cancel">cancelado</string>
+    <string name="zimo_ads_no">no</string>
+    <string name="zimo_ads_yes">sí</string>
+    <string name="zimo_ads_install">Instalar</string>
+    <string name="zimo_ads_close">No</string>
+    <string name="zimo_ads_offer_tip">Descarga y ejecución.</string>
+    <string name="zimo_ads_offer_tip_free">Gratis</string>
+    <string name="zimo_ads_offer_tip_earn">Ganar</string>
+    <string name="zimo_ads_offer_complete_action">Completar estos pasos</string>
+    <string name="zimo_ads_play_now">Play Now</string>
+    <string name="zimo_ads_more_classic_apps">Aplicaciones gratuitas clásicos</string>
+    <string name="zimo_ads_offer_start">comienzo</string>
+    <string name="zimo_ads_offer_next">Siguiente</string>
+    <string name="zimo_ads_offer_tip_title">lista de tareas</string>
+    <string name="zimo_ads_start_now">Start Now</string>
+    <string name="zimo_ads_download">descargar</string>
+    <string name="zimo_ads_exit_tip_text">¿Estás seguro de salir?</string>
+    <string name="zimo_ads_exit">¿Salida</string>
+    <string name="zimo_ads_exit_app">Salir de la aplicación</string>
+    <string name="zimo_ads_more_app">Más aplicaciones</string>
+    <string name="zimo_ads_follow">Seguir</string>
+    <string name="zimo_ads_do_you_like">¿Te gusta esta aplicación?</string>
+</resources>

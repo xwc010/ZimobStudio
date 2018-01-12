@@ -29,6 +29,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile lib.statusbarutil
+    compile lib.Slidr
     compile lib.SmartRefreshLayout
     compile lib.SmartRefreshHeader
     compile lib.RecyclerHelper
