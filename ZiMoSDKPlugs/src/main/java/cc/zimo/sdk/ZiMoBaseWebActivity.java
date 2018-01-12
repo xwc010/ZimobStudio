@@ -38,11 +38,11 @@ public class ZiMoBaseWebActivity extends ZiMoBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(cc.zimo.sdk.R.layout.activity_base_web);
 
-        mLinearLayout = (LinearLayout) this.findViewById(cc.zimo.sdk.R.id.container);
-        mToolbar = (Toolbar) this.findViewById(cc.zimo.sdk.R.id.toolbar);
+        mLinearLayout = (LinearLayout) this.findViewById(cc.zimo.sdk.R.id.ll_sdk_base_web);
+        mToolbar = (Toolbar) this.findViewById(cc.zimo.sdk.R.id.tbar_sdk_base_web);
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setTitle("");
-        mTitleTextView = (TextView) this.findViewById(cc.zimo.sdk.R.id.toolbar_title);
+        mTitleTextView = (TextView) this.findViewById(cc.zimo.sdk.R.id.tv_sdk_base_web_info);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null)
             // Enable the Up button

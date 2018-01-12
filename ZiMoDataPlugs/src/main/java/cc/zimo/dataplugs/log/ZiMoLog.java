@@ -14,7 +14,7 @@ public class ZiMoLog {
     public static void init(){
         Logger.addLogAdapter(new AndroidLogAdapter() {
             @Override public boolean isLoggable(int priority, String tag) {
-                return BuildConfig.DEBUG;
+                return true;
             }
         });
         Logger.t("ZIMO_LOG");
@@ -42,5 +42,13 @@ public class ZiMoLog {
 
     public static void e(Throwable throwable, String msg, Object... args){
         Logger.e(throwable, msg, args);
+    }
+
+    public static void json(String json){
+        Logger.json(json);
+    }
+
+    public static void xml(String xml){
+        Logger.xml(xml);
     }
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+    android:id="@+id/ll_sdk_base_web"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/tbar_sdk_base_web"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
         android:background="?attr/colorPrimary"
@@ -18,7 +18,7 @@
 
 
         <TextView
-            android:id="@+id/toolbar_title"
+            android:id="@+id/tv_sdk_base_web_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

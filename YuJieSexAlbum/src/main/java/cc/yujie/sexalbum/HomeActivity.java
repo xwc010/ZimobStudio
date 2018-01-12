@@ -2,51 +2,38 @@ package cc.yujie.sexalbum;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.blankj.utilcode.util.ToastUtils;
 
-import java.util.List;
-
+import cc.yujie.libs.YuJieFeedTabFragment;
 import cc.zimo.adplugs.view.ExitAdDialog;
 import cc.zimo.sdk.ZiMoBaseHomeActivity;
-import cc.zimo.sdk.adapter.BaseFragmentPagerAdapter;
-import cc.yujie.libs.model.Tab;
-import cc.yujie.sexalbum.module.tabbar.TabContract;
-import cc.yujie.sexalbum.module.tabbar.TabPresenter;
-import cc.yujie.sexalbum.module.tabpage.PageFragment;
 
-public class HomeActivity extends ZiMoBaseHomeActivity implements TabContract.View{
+public class HomeActivity extends ZiMoBaseHomeActivity{
 
-    private Toolbar mToolbar;
-    private TabLayout topTabLayout;
-    private ViewPager mViewPager;
-    private List<Tab> mTabRes;
-    private BaseFragmentPagerAdapter pagerAdapter;
-
+    private YuJieFeedTabFragment mFeedTabFragment;
+    private FrameLayout fl_sexalbum_home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        TabPresenter tabPresenter = new TabPresenter(this);
-        tabPresenter.start();
-
     }
 
     @Override
     public void initUI() {
         super.initUI();
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle(R.string.app_name);
-        topTabLayout = (TabLayout) findViewById(R.id.tabs);
+        fl_sexalbum_home = (FrameLayout) findViewById(R.id.fl_sexalbum_home);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mViewPager.setOffscreenPageLimit(3);
-        pagerAdapter = new BaseFragmentPagerAdapter(getSupportFragmentManager());
+        mFeedTabFragment = new YuJieFeedTabFragment();
+        mFeedTabFragment.setFeedTagUrl("http://zimob.cc/mutil/app/cc.yujie.sexalbum/tab.json");
+
+        FragmentTransaction fgTransactions = getSupportFragmentManager().beginTransaction();
+        fgTransactions.add(R.id.fl_sexalbum_home,mFeedTabFragment);
+        fgTransactions.commit();
     }
 
     @Override
@@ -57,9 +44,7 @@ public class HomeActivity extends ZiMoBaseHomeActivity implements TabContract.Vi
     @Override
     public void doBackgroundToForeground() {
         ToastUtils.showLong("从后台唤醒到前台, 检查此时是否需要出广告");
-        if(mViewPager != null){
-            mViewPager.setCurrentItem(0, false);
-        }
+        mFeedTabFragment.setCurrentItem(0);
     }
 
     @Override
@@ -73,28 +58,4 @@ public class HomeActivity extends ZiMoBaseHomeActivity implements TabContract.Vi
                 });
     }
 
-    @Override
-    public boolean isActive() {
-        return !isFinishing();
-    }
-
-    @Override
-    public void updateTabBar(List<Tab> tabs) {
-        mTabRes = tabs;
-
-        for (Tab tab : mTabRes) {
-//            topTabLayout.addTab(topTabLayout.newTab().setText(tab.getName()).setTag(tab));
-            PageFragment pageFragment = new PageFragment();
-            pageFragment.setTab(tab);
-            pagerAdapter.addFragment(pageFragment, tab.getName());
-        }
-
-        mViewPager.setAdapter(pagerAdapter);
-        topTabLayout.setupWithViewPager(mViewPager, false);
-    }
-
-    @Override
-    public void getTabFail(int code, String msg) {
-        ToastUtils.showShort("code = " + code + "; msg: " + msg);
-    }
 }

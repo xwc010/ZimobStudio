@@ -11,6 +11,6 @@ public class YuJieAblumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_yujie_ablum);
+        setContentView(R.layout.activity_lib_ablum_detail);
     }
 }
