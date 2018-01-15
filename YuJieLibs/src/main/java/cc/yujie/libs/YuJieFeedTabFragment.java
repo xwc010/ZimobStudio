@@ -26,7 +26,7 @@ import cc.zimo.sdk.adapter.BaseFragmentPagerAdapter;
  * Created by xwc on 2018/1/12.
  */
 
-public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContract.View{
+public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContract.View {
 
     private Toolbar mToolbar;
     private TabLayout topTabLayout;
@@ -37,7 +37,7 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_lib_feed_tags, container,false);
+        View view = inflater.inflate(R.layout.fragment_lib_feed_tags, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.tbar_lib);
         mToolbar.setTitle(AppUtils.getAppName());
         topTabLayout = (TabLayout) view.findViewById(R.id.tl_lib_feed_tabs);
@@ -46,8 +46,7 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
         mViewPager.setOffscreenPageLimit(3);
         pagerAdapter = new BaseFragmentPagerAdapter(getChildFragmentManager());
 
-        TabPresenter tabPresenter = new TabPresenter(this);
-        tabPresenter.setUrl(mFeedTagUrl);
+        TabPresenter tabPresenter = new TabPresenter(this, mFeedTagUrl);
         tabPresenter.start();
         ZiMoLog.i("ZiMoBaseFragment onCreateView");
         return view;
@@ -55,12 +54,13 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
 
 
     private String mFeedTagUrl;
-    public void setFeedTagUrl(String url){
+
+    public void setFeedTagUrl(String url) {
         mFeedTagUrl = url;
     }
 
-    public void setCurrentItem(int position){
-        if(mViewPager != null){
+    public void setCurrentItem(int position) {
+        if (mViewPager != null) {
             mViewPager.setCurrentItem(position, false);
         }
     }
@@ -69,8 +69,7 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     protected void lazyLoad() {
         super.lazyLoad();
         ToastUtils.showShort("lazy");
-        TabPresenter tabPresenter = new TabPresenter(this);
-        tabPresenter.setUrl(mFeedTagUrl);
+        TabPresenter tabPresenter = new TabPresenter(this, mFeedTagUrl);
         tabPresenter.start();
     }
 
@@ -88,7 +87,6 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     @Override
     public void updateTabBar(List<Tab> tabs) {
         mTabRes = tabs;
-        ToastUtils.showShort("size = " + mTabRes.size());
         for (Tab tab : mTabRes) {
 //            topTabLayout.addTab(topTabLayout.newTab().setText(tab.getName()).setTag(tab));
             YuJieFeedFragment pageFragment = new YuJieFeedFragment();
@@ -103,5 +101,15 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     @Override
     public void getTabFail(int code, String msg) {
         ToastUtils.showShort("code = " + code + "; msg: " + msg);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void closeLoading() {
+
     }
 }

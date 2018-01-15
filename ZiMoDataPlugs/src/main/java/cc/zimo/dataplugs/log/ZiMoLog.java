@@ -1,7 +1,9 @@
 package cc.zimo.dataplugs.log;
 
 import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
 
 import cc.zimo.dataplugs.BuildConfig;
 
@@ -12,12 +14,20 @@ import cc.zimo.dataplugs.BuildConfig;
 public class ZiMoLog {
 
     public static void init(){
-        Logger.addLogAdapter(new AndroidLogAdapter() {
-            @Override public boolean isLoggable(int priority, String tag) {
-                return true;
-            }
-        });
-        Logger.t("ZIMO_LOG");
+        FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+                .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+                .methodCount(0)         // (Optional) How many method line to show. Default 2
+                .methodOffset(3)        // (Optional) Skips some method invokes in stack trace. Default 5
+//        .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
+                .tag("ZIMO_LOG")   // (Optional) Custom tag for each log. Default PRETTY_LOGGER
+                .build();
+
+        Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+//        Logger.addLogAdapter(new AndroidLogAdapter() {
+//            @Override public boolean isLoggable(int priority, String tag) {
+//                return true;
+//            }
+//        });
     }
 
     public static void fc(String method, Object... args){

@@ -15,6 +15,8 @@ public interface TabContract {
     interface View extends IView<Presenter> {
         void updateTabBar(List<Tab> tabs);
         void getTabFail(int code, String msg);
+        void showLoading();
+        void closeLoading();
     }
 
     interface Presenter extends IPresenter {

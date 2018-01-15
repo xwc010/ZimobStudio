@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_libs_feed_item_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="flag" />
+
+    <TextView
+        android:id="@+id/tv_libs_feed_item_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="8dp"
+        android:textSize="12dp"
+        android:text="the poster name" />
+
+    <TextView
+        android:id="@+id/tv_libs_feed_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:textSize="11dp"
+        android:text="1小时前" />
+
+    <ImageView
+        android:id="@+id/img_libs_feed_item_like_icon"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:visibility="gone"
+        android:src="@android:drawable/ic_lock_idle_alarm"/>
+
+    <TextView
+        android:id="@+id/tv_libs_feed_item_like_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:visibility="gone"
+        android:textSize="12dp"
+        android:text="999+" />
+
+
+    <ImageView
+        android:id="@+id/img_libs_feed_item_brow_icon"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:src="@android:drawable/ic_lock_lock"/>
+
+    <TextView
+        android:id="@+id/tv_libs_feed_item_brow_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textSize="12dp"
+        android:text="999+" />
+
+    <ImageView
+        android:id="@+id/img_libs_feed_item_more_icon"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:src="@android:drawable/ic_lock_silent_mode"/>
+
+</LinearLayout>

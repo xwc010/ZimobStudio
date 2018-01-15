@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tv_libs_feed_txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="6dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        android:text="刚刚给浏览量电风扇归属感连接连接让地方司法个个都是个"/>
+
+    <TextView
+        android:id="@+id/tv_libs_feed_txt_describe"
+        android:layout_below="@+id/tv_libs_feed_txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingRight="18dp"
+        android:paddingLeft="18dp"
+        android:textSize="14sp"
+        android:text="风刀霜剑风刀霜剑都加上破电视剧打扫房间的拍摄风景都怕死飞机大商品房解放军 的皮肤的拍摄风景拍摄附近啪设计费发"/>
+
+    <include
+        android:id="@+id/ll_libs_feed_txt_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
+        layout="@layout/comm_libs_feed_bottom"
+        android:layout_below="@+id/tv_libs_feed_txt_describe"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#20000000"
+        android:layout_below="@+id/ll_libs_feed_txt_bottom"/>
+</RelativeLayout>

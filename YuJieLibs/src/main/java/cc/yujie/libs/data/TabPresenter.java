@@ -28,11 +28,8 @@ public class TabPresenter implements TabContract.Presenter {
     private final TabContract.View mTabsView;
     private String url;
 
-    public TabPresenter(@NonNull TabContract.View mTabsView) {
+    public TabPresenter(@NonNull TabContract.View mTabsView, String url) {
         this.mTabsView = mTabsView;
-    }
-
-    public void setUrl(String url){
         this.url = url;
     }
 
@@ -45,6 +42,7 @@ public class TabPresenter implements TabContract.Presenter {
 
         ZiMoLog.d("TabPresenter url is: " + url);
 
+        mTabsView.showLoading();
         ZiMoHttpClient.getInstance().doGet("dd", this.url, new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
@@ -54,9 +52,11 @@ public class TabPresenter implements TabContract.Presenter {
                     Type type = new TypeToken<ArrayList<Tab>>() {}.getType();
                     final List<Tab> tabs = gson.fromJson(response, type);
                     mTabsView.updateTabBar(tabs);
+                    mTabsView.closeLoading();
                 } catch (JsonSyntaxException e) {
                     e.printStackTrace();
                     mTabsView.getTabFail(HttpParam.DATA_PARSING_ERROR, "Data parsing error!");
+                    mTabsView.closeLoading();
                 }
             }
 
@@ -64,12 +64,14 @@ public class TabPresenter implements TabContract.Presenter {
             public void onFaile(String reqTag, int resultCode, String msg) {
                 super.onFaile(reqTag, resultCode, msg);
                 mTabsView.getTabFail(resultCode, msg);
+                mTabsView.closeLoading();
             }
 
             @Override
             public void onError(String reqTag, int resultCode, Throwable erro) {
                 erro.printStackTrace();
                 mTabsView.getTabFail(resultCode, "NetWork Error!");
+                mTabsView.closeLoading();
             }
         });
     }

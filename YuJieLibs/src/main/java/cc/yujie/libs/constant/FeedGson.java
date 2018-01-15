@@ -12,8 +12,6 @@ public class FeedGson {
     public static Gson getGson(){
 
         GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(EDesplayMode.class,
-                new EDesplayModeJsonSerializer());
         gsonBuilder.registerTypeAdapter(EFeedAction.class,
                 new EFeedActionJsonSerializer());
         gsonBuilder.registerTypeAdapter(EFeedFlag.class,

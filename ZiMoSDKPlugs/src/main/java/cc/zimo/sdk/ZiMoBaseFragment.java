@@ -34,15 +34,18 @@ public class ZiMoBaseFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         isViewCreated = true;
+        initUI();
         lazy();
-        ZiMoLog.i("ZiMoBaseFragment onViewCreated");
+    }
+
+    public void initUI(){
+
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         //isVisibleToUser这个boolean值表示:该Fragment的UI 用户是否可见
-        ZiMoLog.i("ZiMoBaseFragment setUserVisibleHint: " + isVisibleToUser);
         if (isVisibleToUser) {
             isUIVisible = true;
             lazy();
@@ -73,7 +76,7 @@ public class ZiMoBaseFragment extends Fragment {
 
     private void lazy(){
         //这里进行双重标记判断,是因为setUserVisibleHint会多次回调,并且会在onCreateView执行前回调,必须确保onCreateView加载完毕且页面可见,才加载数据
-        ZiMoLog.i("ZiMoBaseFragment lazy isViewCreated: " + isViewCreated + "; isUIVisible: " + isUIVisible);
+//        ZiMoLog.i("ZiMoBaseFragment lazy isViewCreated: " + isViewCreated + "; isUIVisible: " + isUIVisible);
         if ((isViewCreated && isUIVisible) || reloadToVisible()) {
             lazyLoad();
             //数据加载完毕,恢复标记,防止重复加载

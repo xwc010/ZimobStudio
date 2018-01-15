@@ -1,9 +1,11 @@
 package cc.yujie.libs.model;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+
 import java.io.Serializable;
 import java.util.List;
 
-import cc.yujie.libs.constant.EDesplayMode;
+import cc.yujie.libs.constant.DesplayMode;
 import cc.yujie.libs.constant.EFeedAction;
 import cc.yujie.libs.constant.EFeedFlag;
 import cc.yujie.libs.constant.EFeedType;
@@ -12,7 +14,7 @@ import cc.yujie.libs.constant.EFeedType;
  * Created by xwc on 2017/12/22.
  */
 
-public class Feed implements Serializable{
+public class Feed implements Serializable, MultiItemEntity {
 
     private long id;
     private String title; // 标题
@@ -22,7 +24,7 @@ public class Feed implements Serializable{
     private String link; // action 相应的url
     private EFeedAction action; // 0 activity间跳转，1 下载，2 web 浏览
     private EFeedType type; // 0 图文，1 视频，2 Feed广告，3 Html文本
-    private EDesplayMode display_mode; // 0 大图模式，1 左小图模式，2 右小图模式，3 九宫格多图模式，4 纯文本
+    private int display_mode; // 0 大图模式，1 左小图模式，2 右小图模式，3 九宫格多图模式，4 纯文本
     private int like_num;
     private int unlike_num;
     private int comment_num;
@@ -98,11 +100,11 @@ public class Feed implements Serializable{
         this.type = type;
     }
 
-    public EDesplayMode getDisplay_mode() {
+    public int getDisplay_mode() {
         return display_mode;
     }
 
-    public void setDisplay_mode(EDesplayMode display_mode) {
+    public void setDisplay_mode(int display_mode) {
         this.display_mode = display_mode;
     }
 
@@ -184,5 +186,10 @@ public class Feed implements Serializable{
 
     public void setFlag(EFeedFlag flag) {
         this.flag = flag;
+    }
+
+    @Override
+    public int getItemType() {
+        return display_mode;
     }
 }
