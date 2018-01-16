@@ -18,6 +18,7 @@ import java.util.List;
 import cc.yujie.libs.data.TabContract;
 import cc.yujie.libs.data.TabPresenter;
 import cc.yujie.libs.model.Tab;
+import cc.yujie.libs.utils.YuJieUrls;
 import cc.zimo.dataplugs.log.ZiMoLog;
 import cc.zimo.sdk.ZiMoBaseFragment;
 import cc.zimo.sdk.adapter.BaseFragmentPagerAdapter;
@@ -37,6 +38,7 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ZiMoLog.i("ZiMoBaseFragment onCreateView");
         View view = inflater.inflate(R.layout.fragment_lib_feed_tags, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.tbar_lib);
         mToolbar.setTitle(AppUtils.getAppName());
@@ -48,15 +50,14 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
 
         TabPresenter tabPresenter = new TabPresenter(this, mFeedTagUrl);
         tabPresenter.start();
-        ZiMoLog.i("ZiMoBaseFragment onCreateView");
         return view;
     }
 
 
-    private String mFeedTagUrl;
+    private String mFeedTagUrl = YuJieUrls.getTabBarUrl("tabs.json");
 
     public void setFeedTagUrl(String url) {
-        mFeedTagUrl = url;
+//        mFeedTagUrl = url;
     }
 
     public void setCurrentItem(int position) {
@@ -68,9 +69,9 @@ public class YuJieFeedTabFragment extends ZiMoBaseFragment implements TabContrac
     @Override
     protected void lazyLoad() {
         super.lazyLoad();
-        ToastUtils.showShort("lazy");
-        TabPresenter tabPresenter = new TabPresenter(this, mFeedTagUrl);
-        tabPresenter.start();
+//        ToastUtils.showShort("lazy");
+//        TabPresenter tabPresenter = new TabPresenter(this, mFeedTagUrl);
+//        tabPresenter.start();
     }
 
     @Override

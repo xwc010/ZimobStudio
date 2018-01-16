@@ -7,7 +7,6 @@ package cc.yujie.libs.constant;
 
 public enum EFeedFlag {
     DEFAULT, // 默认
-    TOP, // 置顶
     HOT, // 最热
     NEW, // 最新
     AD // 广告

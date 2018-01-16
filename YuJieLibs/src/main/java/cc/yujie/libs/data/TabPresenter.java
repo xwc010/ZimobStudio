@@ -24,7 +24,6 @@ import cc.zimo.dataplugs.log.ZiMoLog;
 
 public class TabPresenter implements TabContract.Presenter {
 
-    private final String TAG = TabPresenter.class.getSimpleName();
     private final TabContract.View mTabsView;
     private String url;
 
@@ -46,7 +45,7 @@ public class TabPresenter implements TabContract.Presenter {
         ZiMoHttpClient.getInstance().doGet("dd", this.url, new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                Log.i(TAG, resultCode + " - " + response);
+                ZiMoLog.d(response);
                 try {
                     Gson gson = new Gson();
                     Type type = new TypeToken<ArrayList<Tab>>() {}.getType();

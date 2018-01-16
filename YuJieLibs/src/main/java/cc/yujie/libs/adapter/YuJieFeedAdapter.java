@@ -14,6 +14,7 @@ import cc.yujie.libs.R;
 import cc.yujie.libs.constant.DesplayMode;
 import cc.yujie.libs.constant.EFeedType;
 import cc.yujie.libs.model.Feed;
+import cc.yujie.libs.utils.YuJieUrls;
 import cc.zimo.imageplugs.ZiMoImgLoader;
 
 /**
@@ -44,7 +45,7 @@ public class YuJieFeedAdapter extends BaseMultiItemQuickAdapter<Feed, BaseViewHo
                 }
 
                 ImageView img_icon = helper.getView(R.id.img_libs_feed_large_cion);
-                ZiMoImgLoader.getInstance().loadImg(feed.getThumbnail(), img_icon);
+                ZiMoImgLoader.getInstance().loadImg(getThumbnail(feed), img_icon);
                 if (feed.getType() == EFeedType.VIDEO) {
                     helper.setVisible(R.id.img_libs_feed_large_video_tag, true);
                 } else {
@@ -62,13 +63,13 @@ public class YuJieFeedAdapter extends BaseMultiItemQuickAdapter<Feed, BaseViewHo
             case DesplayMode.LEFT: {
                 helper.setText(R.id.tv_libs_feed_left_title, feed.getTitle());
                 ImageView img_icon = helper.getView(R.id.img_libs_feed_left_cion);
-                ZiMoImgLoader.getInstance().loadImg(feed.getThumbnail(), img_icon);
+                ZiMoImgLoader.getInstance().loadImg(getThumbnail(feed), img_icon);
                 break;
             }
             case DesplayMode.RIGHT: {
                 helper.setText(R.id.tv_libs_feed_right_title, feed.getTitle());
                 ImageView img_icon = helper.getView(R.id.img_libs_feed_right_cion);
-                ZiMoImgLoader.getInstance().loadImg(feed.getThumbnail(), img_icon);
+                ZiMoImgLoader.getInstance().loadImg(getThumbnail(feed), img_icon);
                 break;
             }
             case DesplayMode.GRIDS: {
@@ -94,4 +95,7 @@ public class YuJieFeedAdapter extends BaseMultiItemQuickAdapter<Feed, BaseViewHo
         }
     }
 
+    private String getThumbnail(Feed feed){
+        return YuJieUrls.getThumbnailUrl(feed.getId()+"/"+feed.getThumbnail());
+    }
 }

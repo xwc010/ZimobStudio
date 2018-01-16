@@ -34,7 +34,7 @@ public class Feed implements Serializable, MultiItemEntity {
     private long time; // Feed 发布时间
     private Publisher publisher; // Feed 发布者
     private String tags; // Feed 标签： 每个便签以空格" " 分隔
-    private EFeedFlag flag; // 0 默认，1 置顶，2 热，3 最新，4 广告
+    private EFeedFlag flag; // 0 默认，1 热，2 最新，3 广告
 
     public long getId() {
         return id;

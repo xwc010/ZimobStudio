@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/img_libs_feed_left_cion"
-            android:layout_width="75dp"
+            android:layout_width="90dp"
             android:layout_height="75dp"
             android:scaleType="fitXY"
             android:src="@color/banner_desc_text_color"/>

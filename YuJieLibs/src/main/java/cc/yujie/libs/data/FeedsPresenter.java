@@ -14,6 +14,7 @@ import cc.yujie.libs.constant.DesplayMode;
 import cc.yujie.libs.constant.FeedGson;
 import cc.yujie.libs.model.Feed;
 import cc.yujie.libs.model.Tab;
+import cc.yujie.libs.utils.YuJieUrls;
 import cc.zimo.dataplugs.http.CallBack;
 import cc.zimo.dataplugs.http.HttpParam;
 import cc.zimo.dataplugs.http.ZiMoHttpClient;
@@ -41,14 +42,9 @@ public class FeedsPresenter implements FeedsContract.Presenter {
             return;
         }
 
-        ZiMoLog.d("FeedsPresenter start() url is: " + mTab.getDatasUrl());
+        ZiMoLog.d("FeedsPresenter start() url is: " + YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()));
 
-        if(getRomte().size()> 0){
-            mFeedsView.onFirstSucc(getRomte());
-            return;
-        }
-
-        ZiMoHttpClient.getInstance().doGet("dd", mTab.getDatasUrl(), new CallBack() {
+        ZiMoHttpClient.getInstance().doGet("reqstart", YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
                 ZiMoLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
@@ -76,6 +72,11 @@ public class FeedsPresenter implements FeedsContract.Presenter {
                 mFeedsView.onFirstFail(resultCode, "NetWork Error!");
             }
         });
+
+//        if(getRomte().size()> 0){
+//            mFeedsView.onFirstSucc(getRomte());
+//            return;
+//        }
     }
 
     /**
@@ -89,14 +90,9 @@ public class FeedsPresenter implements FeedsContract.Presenter {
             return;
         }
 
-        ZiMoLog.d("FeedsPresenter start() url is: " + mTab.getDatasUrl());
+        ZiMoLog.d("FeedsPresenter loadNextPage() url is: " + YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()));
 
-        if(getRomte().size()> 0){
-            mFeedsView.onFirstSucc(getRomte());
-            return;
-        }
-
-        ZiMoHttpClient.getInstance().doGet("dd", mTab.getDatasUrl(), new CallBack() {
+        ZiMoHttpClient.getInstance().doGet("reqnext", YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
                 ZiMoLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
@@ -124,6 +120,11 @@ public class FeedsPresenter implements FeedsContract.Presenter {
                 mFeedsView.onNextFail(resultCode, "NetWork Error!");
             }
         });
+
+//        if(getRomte().size()> 0){
+//            mFeedsView.onFirstSucc(getRomte());
+//            return;
+//        }
     }
 
     private List<Feed> getRomte(){
