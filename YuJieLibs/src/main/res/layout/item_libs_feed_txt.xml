@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="12dp"
-    android:background="@android:color/white">
+    android:background="@drawable/selector_libs_item_bg">
 
     <TextView
         android:id="@+id/tv_libs_feed_txt_title"
@@ -15,8 +15,8 @@
         android:paddingBottom="6dp"
         android:maxLines="2"
         android:ellipsize="end"
-        android:textSize="17sp"
-        android:textColor="@android:color/black"
+        android:textSize="@dimen/size_libs_large"
+        android:textColor="@color/color_libs_black"
         android:text="刚刚给浏览量电风扇归属感连接连接让地方司法个个都是个"/>
 
     <TextView
@@ -25,9 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
-        android:paddingRight="18dp"
-        android:paddingLeft="18dp"
-        android:textSize="14sp"
+        android:paddingRight="17dp"
+        android:paddingLeft="17dp"
+        android:textSize="@dimen/size_libs_common"
+        android:textColor="@color/color_libs_gray_mid"
         android:text="风刀霜剑风刀霜剑都加上破电视剧打扫房间的拍摄风景都怕死飞机大商品房解放军 的皮肤的拍摄风景拍摄附近啪设计费发"/>
 
     <include

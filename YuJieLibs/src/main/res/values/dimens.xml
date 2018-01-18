@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_libs_large_too">20sp</dimen>
+    <dimen name="size_libs_large">17sp</dimen>
+    <dimen name="size_libs_common">14sp</dimen>
+    <dimen name="size_libs_small">12sp</dimen>
+    <dimen name="size_libs_small_too">10sp</dimen>
+</resources>

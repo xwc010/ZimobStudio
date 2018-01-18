@@ -1,5 +1,7 @@
 package cc.zimo.dataplugs.http;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 
 import com.squareup.okhttp.Callback;
@@ -114,7 +116,7 @@ public class ZiMoHttpClient implements IHttp{
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, final IOException e) {
-                HttpParam.MAIN_HANDLER.post(new Runnable() {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
                         callBack.onError(reqTag, HttpParam.NETWORK_ERROR, e);
@@ -124,7 +126,7 @@ public class ZiMoHttpClient implements IHttp{
 
             @Override
             public void onResponse(final Response response) {
-                HttpParam.MAIN_HANDLER.post(new Runnable() {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
                         if(!response.isSuccessful()){

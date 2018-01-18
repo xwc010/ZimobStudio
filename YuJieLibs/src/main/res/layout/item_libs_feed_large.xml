@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="12dp"
-    android:background="@android:color/white">
+    android:background="@drawable/selector_libs_item_bg">
 
     <TextView
         android:id="@+id/tv_libs_feed_large_title"
@@ -15,8 +15,8 @@
         android:paddingLeft="16dp"
         android:maxLines="2"
         android:ellipsize="end"
-        android:textSize="17sp"
-        android:textColor="@android:color/black"
+        android:textSize="@dimen/size_libs_large"
+        android:textColor="@color/color_libs_black"
         android:text="刚刚给浏览量电风扇归属感连接连接让地方司法个个都是个"/>
 
     <FrameLayout
@@ -31,9 +31,8 @@
         <ImageView
             android:id="@+id/img_libs_feed_large_cion"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:scaleType="centerCrop"
-            android:src="@color/banner_desc_text_color"/>
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
 
         <include
             android:id="@+id/ll_libs_feed_large_time_num"
@@ -46,10 +45,10 @@
 
         <ImageView
             android:id="@+id/img_libs_feed_large_video_tag"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@android:drawable/ic_lock_silent_mode"/>
+            android:src="@drawable/jz_play_normal"/>
 
     </FrameLayout>
 
@@ -59,11 +58,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
-        android:paddingRight="18dp"
-        android:paddingLeft="18dp"
+        android:paddingRight="17dp"
+        android:paddingLeft="17dp"
         android:maxLines="4"
         android:ellipsize="end"
         android:textSize="14sp"
+        android:textColor="@color/color_libs_gray_mid"
         android:text="风刀霜剑风刀霜剑都加上破电视剧打扫房间的拍摄风景都怕死飞机大商品房解放军 的皮肤的拍摄风景拍摄附近啪设计费发"/>
 
 

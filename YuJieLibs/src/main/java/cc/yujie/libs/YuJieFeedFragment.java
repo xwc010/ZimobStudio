@@ -1,5 +1,6 @@
 package cc.yujie.libs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.List;
 
 import cc.yujie.libs.adapter.YuJieFeedAdapter;
+import cc.yujie.libs.constant.EFeedType;
 import cc.yujie.libs.data.FeedsContract;
 import cc.yujie.libs.data.FeedsPresenter;
 import cc.yujie.libs.model.Feed;
@@ -100,6 +104,8 @@ public class YuJieFeedFragment extends NestedRecyclerFragment implements FeedsCo
         feedAdapter = new YuJieFeedAdapter(getActivity(), datas);
         // 设置adapter
         mRecyclerView.setAdapter(feedAdapter);
+        feedAdapter.setOnItemClickListener(createOnItemClickListener());
+        feedAdapter.setOnItemChildClickListener(createOnItemChildClickListener());
     }
 
     @Override
@@ -136,5 +142,41 @@ public class YuJieFeedFragment extends NestedRecyclerFragment implements FeedsCo
     @Override
     public void closeLoadingNext() {
 
+    }
+
+    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener;
+
+    private BaseQuickAdapter.OnItemClickListener createOnItemClickListener() {
+
+        if (mOnItemClickListener == null) {
+            mOnItemClickListener = new BaseQuickAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                    Feed feed = (Feed) adapter.getItem(position);
+
+                    if (feed.getType() == EFeedType.VIDEO) {
+                        YuJieVideoActivity.startVideo(getActivity(), feed);
+                    } else {
+
+                    }
+                }
+            };
+        }
+        return mOnItemClickListener;
+    }
+
+    private BaseQuickAdapter.OnItemChildClickListener mOnItemChildClickListener;
+
+    private BaseQuickAdapter.OnItemChildClickListener createOnItemChildClickListener() {
+
+        if (mOnItemChildClickListener == null) {
+            mOnItemChildClickListener = new BaseQuickAdapter.OnItemChildClickListener() {
+                @Override
+                public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
+                }
+            };
+        }
+        return mOnItemChildClickListener;
     }
 }

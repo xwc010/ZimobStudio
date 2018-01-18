@@ -3,7 +3,8 @@
     package="cc.yujie.libs">
 
     <application>
-        <activity android:name="cc.yujie.libs.YuJieAblumActivity"></activity>
+        <activity android:name=".YuJieAblumActivity" />
+        <activity android:name=".YuJieVideoActivity"></activity>
     </application>
 
 </manifest>

@@ -17,7 +17,7 @@ public class ZiMoLog {
         FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
                 .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
                 .methodCount(0)         // (Optional) How many method line to show. Default 2
-                .methodOffset(3)        // (Optional) Skips some method invokes in stack trace. Default 5
+                .methodOffset(5)        // (Optional) Skips some method invokes in stack trace. Default 5
 //        .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
                 .tag("ZIMO_LOG")   // (Optional) Custom tag for each log. Default PRETTY_LOGGER
                 .build();
