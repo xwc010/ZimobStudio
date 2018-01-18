@@ -1,7 +1,5 @@
 package cc.zimo.dataplugs.http;
 
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 
 import com.squareup.okhttp.Callback;
@@ -17,6 +15,8 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import cc.zimo.dataplugs.ZiMoDataManager;
 
 /**
  * Created by xwc on 2017/12/25.
@@ -116,7 +116,7 @@ public class ZiMoHttpClient implements IHttp{
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, final IOException e) {
-                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                ZiMoDataManager.getMainHandler().post(new Runnable() {
                     @Override
                     public void run() {
                         callBack.onError(reqTag, HttpParam.NETWORK_ERROR, e);
@@ -125,22 +125,31 @@ public class ZiMoHttpClient implements IHttp{
             }
 
             @Override
-            public void onResponse(final Response response) {
-                new Handler(Looper.getMainLooper()).post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(!response.isSuccessful()){
-                            callBack.onFaile(reqTag, response.code(), response.message());
-                        }else {
-                            try {
-                                callBack.onSuccess(reqTag, response.code(), response.body().string());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                callBack.onFaile(reqTag, HttpParam.RESPONSE_ERROR, "Response IOException!");
+            public void onResponse(Response response) {
+                final boolean isSucceddful = response.isSuccessful();
+                final int code = response.code();
+                final String msg = response.message();
+                try {
+                    final String responseStr = response.body().string();
+                    ZiMoDataManager.getMainHandler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(!isSucceddful){
+                                callBack.onFaile(reqTag, code, msg);
+                            }else {
+                                callBack.onSuccess(reqTag, code, responseStr);
                             }
                         }
-                    }
-                });
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    ZiMoDataManager.getMainHandler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            callBack.onFaile(reqTag, HttpParam.RESPONSE_ERROR, "Response IOException!");
+                        }
+                    });
+                }
             }
         });
     }
