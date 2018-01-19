@@ -1,16 +1,13 @@
 package cc.zimo.adplugs;
 
 import android.app.Application;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.blankj.utilcode.util.Utils;
-
 import cc.zimo.adplugs.utils.Constant;
-import cc.zimo.dataplugs.ZiMoDataManager;
-import cc.zimo.dataplugs.log.ZiMoLog;
-import cc.zimo.imageplugs.ZiMoImgLoader;
+import cc.zimo.dataplugs.ZMDataManager;
+import cc.zimo.dataplugs.log.ZMLog;
+import cc.zimo.imageplugs.ZMImgLoader;
 
 /**
  * Created by xwc on 2018/1/2.
@@ -23,8 +20,8 @@ public class ZiMoAdsAdgent {
     public static final Handler Main_Handler = new Handler(Looper.getMainLooper());
 
     public static void initAppliction(Application application) {
-        ZiMoDataManager.init(application);
-        ZiMoImgLoader.getInstance().init(application);
+        ZMDataManager.init(application);
+        ZMImgLoader.getInstance().init(application);
         Constant.appStartTime = System.currentTimeMillis();
     }
 
@@ -49,8 +46,8 @@ public class ZiMoAdsAdgent {
      * 设置为false,表示不支持透明navBar，布局在容器的最顶层
      */
     public static void setTransparentNavBar(boolean transparentNavBar) {
-        ZiMoLog.fc("setTransparentNavBar");
-        ZiMoLog.d("setTransparentNavBar transparentNavBar==>" + transparentNavBar);
+        ZMLog.fc("setTransparentNavBar");
+        ZMLog.d("setTransparentNavBar transparentNavBar==>" + transparentNavBar);
         Constant.transparentNavBar = transparentNavBar;
     }
 

@@ -9,7 +9,7 @@ import cc.zimo.adplugs.ZiMoAdsAdgent;
 import cc.zimo.adplugs.model.AdData;
 import cc.zimo.adplugs.utils.AdLog;
 import cc.zimo.adplugs.utils.AdPlatform;
-import cc.zimo.dataplugs.ZiMoDataManager;
+import cc.zimo.dataplugs.ZMDataManager;
 
 /**
  * @author Liuhai on 2017/8/17 11:48
@@ -23,8 +23,8 @@ public class AdXmiSdk {
         String adxmiAppId = null;
         String adxmiAppSecret = null;
         if (Utils.getApp() != null) {
-            adxmiAppId = ZiMoDataManager.sdCache.getAsString("adxmiAppID");
-            adxmiAppSecret = ZiMoDataManager.sdCache.getAsString("adxmiAppSecret");
+            adxmiAppId = ZMDataManager.sdCache.getAsString("adxmiAppID");
+            adxmiAppSecret = ZMDataManager.sdCache.getAsString("adxmiAppSecret");
         }
 
         if (TextUtils.isEmpty(adxmiAppId) || TextUtils.isEmpty(adxmiAppSecret)) {

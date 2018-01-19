@@ -2,7 +2,6 @@ package cc.yujie.libs.data;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -15,8 +14,8 @@ import java.util.List;
 import cc.yujie.libs.model.Tab;
 import cc.zimo.dataplugs.http.CallBack;
 import cc.zimo.dataplugs.http.HttpParam;
-import cc.zimo.dataplugs.http.ZiMoHttpClient;
-import cc.zimo.dataplugs.log.ZiMoLog;
+import cc.zimo.dataplugs.http.ZMHttpClient;
+import cc.zimo.dataplugs.log.ZMLog;
 
 /**
  * Created by xwc on 2017/12/29.
@@ -35,17 +34,17 @@ public class TabPresenter implements TabContract.Presenter {
     @Override
     public void start() {
         if(TextUtils.isEmpty(this.url)){
-            ZiMoLog.e("TabPresenter url is empty");
+            ZMLog.e("TabPresenter url is empty");
             return;
         }
 
-        ZiMoLog.d("TabPresenter url is: " + url);
+        ZMLog.d("TabPresenter url is: " + url);
 
         mTabsView.showLoading();
-        ZiMoHttpClient.getInstance().doGet("dd", this.url, new CallBack() {
+        ZMHttpClient.getInstance().doGet("dd", this.url, new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                ZiMoLog.d(response);
+                ZMLog.d(response);
                 try {
                     Gson gson = new Gson();
                     Type type = new TypeToken<ArrayList<Tab>>() {}.getType();

@@ -6,13 +6,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 
-import cc.zimo.sdk.ZiMoBaseGuideActivity;
+import cc.zimo.sdk.ZMBaseGuideActivity;
 
 /**
  * Created by xwc on 2017/12/11.
  */
 
-public class YJGuideActivity extends ZiMoBaseGuideActivity {
+public class YJGuideActivity extends ZMBaseGuideActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class YJGuideActivity extends ZiMoBaseGuideActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(YJGuideActivity.this, HomeActivity.class);
+                Intent intent = new Intent(YJGuideActivity.this, YJHomeActivity.class);
                 startActivity(intent);
                 finish();
             }

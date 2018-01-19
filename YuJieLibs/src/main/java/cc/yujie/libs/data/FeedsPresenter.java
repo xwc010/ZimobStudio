@@ -14,11 +14,11 @@ import cc.yujie.libs.constant.DesplayMode;
 import cc.yujie.libs.constant.FeedGson;
 import cc.yujie.libs.model.Feed;
 import cc.yujie.libs.model.Tab;
-import cc.yujie.libs.utils.YuJieUrls;
+import cc.yujie.libs.utils.YJLUrls;
 import cc.zimo.dataplugs.http.CallBack;
 import cc.zimo.dataplugs.http.HttpParam;
-import cc.zimo.dataplugs.http.ZiMoHttpClient;
-import cc.zimo.dataplugs.log.ZiMoLog;
+import cc.zimo.dataplugs.http.ZMHttpClient;
+import cc.zimo.dataplugs.log.ZMLog;
 
 /**
  * Created by xwc on 2018/1/15.
@@ -38,16 +38,16 @@ public class FeedsPresenter implements FeedsContract.Presenter {
     @Override
     public void start() {
         if(mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())){
-            ZiMoLog.e("FeedsPresenter url is empty");
+            ZMLog.e("FeedsPresenter url is empty");
             return;
         }
 
-        ZiMoLog.d("FeedsPresenter start() url is: " + YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()));
+        ZMLog.d("FeedsPresenter start() url is: " + YJLUrls.getTabFeedUrl(mTab.getDatasUrl()));
 
-        ZiMoHttpClient.getInstance().doGet("reqstart", YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
+        ZMHttpClient.getInstance().doGet("reqstart", YJLUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                ZiMoLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
+                ZMLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
                 try {
                     Gson gson = FeedGson.getGson();
                     Type type = new TypeToken<ArrayList<Feed>>() {}.getType();
@@ -86,16 +86,16 @@ public class FeedsPresenter implements FeedsContract.Presenter {
     @Override
     public void loadNextPage(Feed cuLastFeed) {
         if(mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())){
-            ZiMoLog.e("FeedsPresenter url is empty");
+            ZMLog.e("FeedsPresenter url is empty");
             return;
         }
 
-        ZiMoLog.d("FeedsPresenter loadNextPage() url is: " + YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()));
+        ZMLog.d("FeedsPresenter loadNextPage() url is: " + YJLUrls.getTabFeedUrl(mTab.getDatasUrl()));
 
-        ZiMoHttpClient.getInstance().doGet("reqnext", YuJieUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
+        ZMHttpClient.getInstance().doGet("reqnext", YJLUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                ZiMoLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
+                ZMLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
                 try {
                     Gson gson = FeedGson.getGson();
                     Type type = new TypeToken<ArrayList<Feed>>() {}.getType();

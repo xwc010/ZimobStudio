@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cc.yujie.smallvideo.HomeActivity">
+    tools:context="cc.yujie.smallvideo.YJHomeActivity">
 
     <FrameLayout
         android:id="@+id/content"

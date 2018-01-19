@@ -4,11 +4,11 @@
 
     <application>
         <activity
-            android:name=".YuJieAblumActivity"
+            android:name=".YJLAblumActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".YuJieVideoActivity"
+            android:name=".YJLVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
     </application>

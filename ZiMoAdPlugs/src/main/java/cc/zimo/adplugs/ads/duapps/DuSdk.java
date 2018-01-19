@@ -8,7 +8,7 @@ import com.duapps.ad.video.DuVideoAdSDK;
 
 import cc.zimo.adplugs.utils.AdLog;
 import cc.zimo.adplugs.utils.AdPlatform;
-import cc.zimo.dataplugs.ZiMoDataManager;
+import cc.zimo.dataplugs.ZMDataManager;
 
 /**
  * 根据duapps的SDK的要求对数据进行整合
@@ -23,10 +23,10 @@ public class DuSdk {
         String duInterstitialId = null;
         String duNativeIds = null;
         String duVideoIds = null;
-        if (ZiMoDataManager.sdCache != null) {
-            duInterstitialId = ZiMoDataManager.sdCache.getAsString("duInterstitialId");
-            duNativeIds = ZiMoDataManager.sdCache.getAsString("duNativeIds");
-            duVideoIds = ZiMoDataManager.sdCache.getAsString("duVideoIds");
+        if (ZMDataManager.sdCache != null) {
+            duInterstitialId = ZMDataManager.sdCache.getAsString("duInterstitialId");
+            duNativeIds = ZMDataManager.sdCache.getAsString("duNativeIds");
+            duVideoIds = ZMDataManager.sdCache.getAsString("duVideoIds");
         }
 
         if (TextUtils.isEmpty(duInterstitialId) && TextUtils.isEmpty(duNativeIds)) {

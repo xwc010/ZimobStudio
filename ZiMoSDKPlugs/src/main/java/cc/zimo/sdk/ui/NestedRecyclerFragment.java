@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cc.zimo.sdk.R;
-import cc.zimo.sdk.ZiMoBaseFragment;
+import cc.zimo.sdk.ZMBaseFragment;
 
 /**
  * Created by xwc on 2018/1/4.
  */
 
-public class NestedRecyclerFragment extends ZiMoBaseFragment {
+public class NestedRecyclerFragment extends ZMBaseFragment {
 
     protected RecyclerView mRecyclerView;
 

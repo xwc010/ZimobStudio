@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cc.zimo.adplugs.R;
-import cc.zimo.imageplugs.ZiMoImgLoader;
+import cc.zimo.imageplugs.ZMImgLoader;
 
 /**
  * Created by xwc on 2018/1/2.
@@ -32,7 +32,7 @@ public class ExitAdDialog {
         if(!TextUtils.isEmpty(adImgURL) && !TextUtils.isEmpty(describe)){
             view = LayoutInflater.from(context).inflate(R.layout.zimo_ads_exit_dialog, null, false);
             ImageView adImg = (ImageView) view.findViewById(R.id.img_ads_exit_diaolg);
-            ZiMoImgLoader.getInstance().loadImg(adImgURL, adImg);
+            ZMImgLoader.getInstance().loadImg(adImgURL, adImg);
             TextView adDesc = (TextView) view.findViewById(R.id.tv_ads_exit_diaolg);
             adDesc.setText(describe);
         }
