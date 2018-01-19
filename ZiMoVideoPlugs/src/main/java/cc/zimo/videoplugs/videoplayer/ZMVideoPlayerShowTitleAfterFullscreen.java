@@ -6,12 +6,12 @@ import android.view.View;
 
 import cn.jzvd.JZVideoPlayerStandard;
 
-public class ZMVideoPlayerStandardShowTitleAfterFullscreen extends JZVideoPlayerStandard {
-    public ZMVideoPlayerStandardShowTitleAfterFullscreen(Context context) {
+public class ZMVideoPlayerShowTitleAfterFullscreen extends JZVideoPlayerStandard {
+    public ZMVideoPlayerShowTitleAfterFullscreen(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandardShowTitleAfterFullscreen(Context context, AttributeSet attrs) {
+    public ZMVideoPlayerShowTitleAfterFullscreen(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

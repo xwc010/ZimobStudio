@@ -12,14 +12,14 @@ import cn.jzvd.JZVideoPlayerStandard;
 /**
  * Just replace thumb from ImageView to SimpleDraweeView
  */
-public class ZMVideoPlayerStandardFresco extends JZVideoPlayerStandard {
+public class ZMVideoPlayerFresco extends JZVideoPlayerStandard {
     //    public SimpleDraweeView thumbImageView;
 
-    public ZMVideoPlayerStandardFresco(Context context) {
+    public ZMVideoPlayerFresco(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandardFresco(Context context, AttributeSet attrs) {
+    public ZMVideoPlayerFresco(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

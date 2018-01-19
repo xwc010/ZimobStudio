@@ -11,12 +11,12 @@ import cn.jzvd.JZVideoPlayerStandard;
  * 这里可以监听到视频播放的生命周期和播放状态
  * 所有关于视频的逻辑都应该写在这里
  */
-public class ZMVideoPlayerStandard extends JZVideoPlayerStandard {
-    public ZMVideoPlayerStandard(Context context) {
+public class ZMVideoPlayer extends JZVideoPlayerStandard {
+    public ZMVideoPlayer(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandard(Context context, AttributeSet attrs) {
+    public ZMVideoPlayer(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

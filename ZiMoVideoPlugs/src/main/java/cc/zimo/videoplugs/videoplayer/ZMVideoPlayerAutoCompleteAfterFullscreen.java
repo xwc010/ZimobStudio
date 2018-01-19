@@ -13,12 +13,12 @@ import cn.jzvd.JZVideoPlayerStandard;
 /**
  * 全屏状态播放完成，不退出全屏
  */
-public class ZMVideoPlayerStandardAutoCompleteAfterFullscreen extends JZVideoPlayerStandard {
-    public ZMVideoPlayerStandardAutoCompleteAfterFullscreen(Context context) {
+public class ZMVideoPlayerAutoCompleteAfterFullscreen extends JZVideoPlayerStandard {
+    public ZMVideoPlayerAutoCompleteAfterFullscreen(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandardAutoCompleteAfterFullscreen(Context context, AttributeSet attrs) {
+    public ZMVideoPlayerAutoCompleteAfterFullscreen(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

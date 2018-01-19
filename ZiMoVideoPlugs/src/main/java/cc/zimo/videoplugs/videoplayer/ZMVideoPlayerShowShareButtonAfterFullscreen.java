@@ -9,15 +9,15 @@ import android.widget.Toast;
 import cc.zimo.videoplugs.R;
 import cn.jzvd.JZVideoPlayerStandard;
 
-public class ZMVideoPlayerStandardShowShareButtonAfterFullscreen extends JZVideoPlayerStandard {
+public class ZMVideoPlayerShowShareButtonAfterFullscreen extends JZVideoPlayerStandard {
 
     public ImageView shareButton;
 
-    public ZMVideoPlayerStandardShowShareButtonAfterFullscreen(Context context) {
+    public ZMVideoPlayerShowShareButtonAfterFullscreen(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandardShowShareButtonAfterFullscreen(Context context, AttributeSet attrs) {
+    public ZMVideoPlayerShowShareButtonAfterFullscreen(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

@@ -6,12 +6,12 @@ import android.view.View;
 
 import cn.jzvd.JZVideoPlayerStandard;
 
-public class ZMVideoPlayerStandardShowTextureViewAfterAutoComplete extends JZVideoPlayerStandard {
-    public ZMVideoPlayerStandardShowTextureViewAfterAutoComplete(Context context) {
+public class ZMVideoPlayerShowTextureViewAfterAutoComplete extends JZVideoPlayerStandard {
+    public ZMVideoPlayerShowTextureViewAfterAutoComplete(Context context) {
         super(context);
     }
 
-    public ZMVideoPlayerStandardShowTextureViewAfterAutoComplete(Context context, AttributeSet attrs) {
+    public ZMVideoPlayerShowTextureViewAfterAutoComplete(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
