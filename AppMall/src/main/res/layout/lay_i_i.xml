@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:background="@drawable/selector_libs_item_bg">
+
+    <TextView
+        android:id="@+id/tv_libs_feed_large_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="6dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="@dimen/size_libs_large"
+        android:textColor="@color/color_libs_black"
+        android:text="刚刚给浏览量电风扇归属感连接连接让地方司法个个都是个"/>
+
+    <ImageView
+        android:id="@+id/img_libs_feed_large_cion"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/tv_libs_feed_large_title"
+        android:scaleType="centerCrop"/>
+
+    <include
+        android:id="@+id/ll_libs_feed_large_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="12dp"
+        layout="@layout/comm_bottom"
+        android:layout_below="@+id/img_libs_feed_large_cion"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#20000000"
+        android:layout_below="@+id/ll_libs_feed_large_bottom"/>
+</RelativeLayout>

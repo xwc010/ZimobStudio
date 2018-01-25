@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:background="@drawable/selector_libs_item_bg">
+
+
+    <ImageView
+        android:id="@+id/img_app_cion"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_app_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/img_app_cion"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:textColor="@color/color_libs_black"
+        android:text="刚刚给浏览量电风扇归属感连接连接让地方司法"/>
+
+    <TextView
+        android:id="@+id/tv_app_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_app_title"
+        android:layout_alignRight="@+id/tv_app_title"
+        android:layout_below="@+id/tv_app_title"
+        android:ellipsize="end"
+        android:textSize="10sp"
+        android:textColor="@color/color_libs_gray"
+        android:paddingTop="2dp"
+        android:text="下载：79万次   6.54M"/>
+
+    <TextView
+        android:id="@+id/tv_app_describe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_app_title"
+        android:layout_alignRight="@+id/tv_app_title"
+        android:layout_alignBottom="@+id/img_app_cion"
+        android:lines="2"
+        android:ellipsize="end"
+        android:textSize="10sp"
+        android:textColor="@color/color_libs_gray"
+        android:text="dsfsdfsdggdfgdfhdhdhghdgerreyeryreyeyyertertertretetetert"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#20000000"
+        android:layout_below="@+id/img_app_cion"/>
+
+</RelativeLayout>

@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "27.0.2"
+
+
+    defaultConfig {
+        applicationId "com.tad.stunnerwon.ui"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        // 指定支持的so架构
+        ndk {
+            abiFilters 'armeabi'//, 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file("YuJie_KeyStore.jks")
+            storePassword "yujie010521"
+            keyAlias "Zimob"
+            keyPassword "zimob010521"
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile name: 'YoumiSdk_v7.5.0', ext: 'aar'
+    compile lib.picasso
+    compile lib.RecyclerHelper
+    compile lib.jiaozivideoplayer
+    compile lib.okhttp
+    compile lib.okio
+}
+

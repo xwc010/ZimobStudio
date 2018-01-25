@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_libs_red">#d81e06</color>
+    <color name="color_libs_gray">#8a8a8a</color>
+    <color name="color_libs_gray_mid">#515151</color>
+    <color name="color_libs_black">#2c2c2c</color>
+    <color name="color_libs_blue">#2a85f4</color>
+    <color name="color_libs_blue_b">#004198</color>
+</resources>

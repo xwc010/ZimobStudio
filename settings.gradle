@@ -1,1 +1,1 @@
-include ':ZiMoAdPlugs', ':ZiMoAnalyStatisPlugs', ':ZiMoSDKPlugs', ':ZiMoDataPlugs', ':ZiMoImagePlugs', ':ZiMoIMPlugs', ':ZiMoUIPlugs', ':ZiMoVideoPlugs', ':ZiMoWebPlus', ':YuJieSmallVideo', ':YuJieSexAlbum', ':YuJieLibs'
+include ':ZiMoAdPlugs', ':ZiMoAnalyStatisPlugs', ':ZiMoSDKPlugs', ':ZiMoDataPlugs', ':ZiMoImagePlugs', ':ZiMoIMPlugs', ':ZiMoUIPlugs', ':ZiMoVideoPlugs', ':ZiMoWebPlus', ':YuJieSmallVideo', ':YuJieSexAlbum', ':YuJieLibs', ':AppMall'
