@@ -57,11 +57,10 @@ public class AF extends Fragment {
         // 设置Item添加和移除的动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         AA aa = new AA(getDatas());
-        loadRemote();
         // 设置adapter
         mRecyclerView.setAdapter(aa);
         aa.setOnItemClickListener(createOnItemClickListener());
-
+        loadRemote();
         return view;
     }
 
@@ -112,6 +111,7 @@ public class AF extends Fragment {
         } else {
             SharedPreferences sharedPreferences = getContext().getSharedPreferences("AFDATAS", Context.MODE_PRIVATE);
             String jo = sharedPreferences.getString("jo", "");
+            lg.i("loadRemote", "AF load cache data" + jo);
             if (!TextUtils.isEmpty(jo)) {
                 par(jo);
             }
@@ -144,6 +144,7 @@ public class AF extends Fragment {
 
                     SharedPreferences sharedPreferences = getContext().getSharedPreferences("AFDATAS", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
+                    lg.i("loadRemote", "AF save data to cache " + jo);
                     editor.putString("jo", jo);
                     editor.commit();
                 }

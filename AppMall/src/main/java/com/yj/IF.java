@@ -160,6 +160,7 @@ public class IF extends Fragment {
         } else {
             SharedPreferences sharedPreferences = getContext().getSharedPreferences("IFDATAS", Context.MODE_PRIVATE);
             String jo = sharedPreferences.getString("jo", "");
+            lg.i("loadRemote", "IF load cache data" + jo);
             if (!TextUtils.isEmpty(jo)) {
                 par(jo);
             }
@@ -187,6 +188,7 @@ public class IF extends Fragment {
                     initFirst(as);
                     SharedPreferences sharedPreferences = getContext().getSharedPreferences("IFDATAS", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
+                    lg.i("loadRemote", "IF save data to cache " + jo);
                     editor.putString("jo", jo);
                     editor.commit();
                 }
