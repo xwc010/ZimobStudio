@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import java.util.LinkedList;
 
+import cc.zimo.dataplugs.http.IPUnit;
+
 /**
  * Created by xwc on 2017/12/22.
  */
@@ -36,7 +38,7 @@ public class ActivityManager {
 
             @Override
             public void onActivityResumed(Activity activity) {
-                IP.initNetIp();
+                IPUnit.initNetIp();
             }
 
             @Override

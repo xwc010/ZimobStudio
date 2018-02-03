@@ -246,7 +246,7 @@ public class IF extends Fragment {
                 @Override
                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                     F f = (F) adapter.getItem(position);
-                    IA.startShowImg(getContext(), f.getImgUrl());
+                    IA.startShowImg(getContext(), f);
                 }
             };
         }

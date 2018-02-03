@@ -27,6 +27,7 @@
             android:name="com.yj.IA"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
+        <activity android:name="com.yj.FA"></activity>
     </application>
 
 </manifest>

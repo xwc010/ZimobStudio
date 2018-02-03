@@ -9,16 +9,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.yj.m.F;
 import com.yj.see.R;
 import com.yj.u.ad;
+import com.yj.u.fesa;
 import com.yj.u.lg;
+import com.yj.u.sc;
 
 import net.youmi.android.nm.bn.BannerManager;
 import net.youmi.android.nm.bn.BannerViewListener;
 import net.youmi.android.nm.sp.SpotListener;
 import net.youmi.android.nm.sp.SpotManager;
+
+import java.util.List;
 
 public class IA extends AppCompatActivity {
 
@@ -38,11 +44,18 @@ public class IA extends AppCompatActivity {
             getActionBar().hide();
         }
 
-        String imgUrl = getIntent().getStringExtra("imgUrl");
-        Picasso.with(this).load(imgUrl)
+        final F f = (F) getIntent().getSerializableExtra("Feed");
+        Picasso.with(this).load(f.getImgUrl())
                 .placeholder(R.drawable.img_loading_default)
                 .error(R.drawable.img_loading_default)
                 .into(img_show);
+
+        findViewById(R.id.img_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sa(f);
+            }
+        });
 
         if (ad.canShowAd()) {
             showBottomBanner();
@@ -53,9 +66,9 @@ public class IA extends AppCompatActivity {
         }
     }
 
-    public static void startShowImg(Context context, String imgUrl) {
+    public static void startShowImg(Context context, F f) {
         Intent intent = new Intent(context, IA.class);
-        intent.putExtra("imgUrl", imgUrl);
+        intent.putExtra("Feed", f);
         context.startActivity(intent);
     }
 
@@ -174,5 +187,13 @@ public class IA extends AppCompatActivity {
                         isShow = false;
                     }
                 });
+    }
+
+    private void sa(F f){
+        if (fesa.save(getApplicationContext(), f)){
+            Toast.makeText(this, "收藏成功", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "收藏失败", Toast.LENGTH_SHORT).show();
+        }
     }
 }

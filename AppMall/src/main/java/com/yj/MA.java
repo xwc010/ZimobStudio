@@ -9,6 +9,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.yj.see.R;
@@ -46,7 +47,22 @@ public class MA extends AppCompatActivity {
         setContentView(R.layout.a_m);
 
         Toolbar tbar_m = (Toolbar) findViewById(R.id.tbar_m);
+        setSupportActionBar(tbar_m);
         tbar_m.setTitle(getAppName());
+//        tbar_m.setMenu();
+
+        tbar_m.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_favorite:
+                        Intent intent = new Intent(MA.this, FA.class);
+                        startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+        });
 
         IF = new IF();
         AF = new AF();
@@ -107,4 +123,11 @@ public class MA extends AppCompatActivity {
         SpotManager.getInstance(getApplicationContext()).onAppExit();
         super.onDestroy();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bar_menu, menu);
+        return true;
+    }
+
 }

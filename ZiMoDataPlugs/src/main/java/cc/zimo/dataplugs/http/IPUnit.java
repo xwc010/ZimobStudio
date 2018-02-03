@@ -1,4 +1,4 @@
-package cc.zimo.sdk.utils;
+package cc.zimo.dataplugs.http;
 
 import android.text.TextUtils;
 
@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by xwc on 2018/1/10.
  */
 
-public class IP {
+public class IPUnit {
 
     private static String NET_IP = "";
     public static Map<String, String> IP_SN = new HashMap<>();
