@@ -23,8 +23,9 @@
     <LinearLayout
         android:id="@+id/ll_ads"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top">
 
     </LinearLayout>
 </FrameLayout>

@@ -35,6 +35,9 @@ import java.util.List;
 
 import cn.jzvd.JZVideoPlayer;
 
+/**
+ * Feed流Fragment
+ */
 public class IF extends Fragment {
 
     protected RecyclerView mRecyclerView;

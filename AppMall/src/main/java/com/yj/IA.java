@@ -26,6 +26,9 @@ import net.youmi.android.nm.sp.SpotManager;
 
 import java.util.List;
 
+/**
+ *  查看完整图片
+ */
 public class IA extends AppCompatActivity {
 
     private ImageView img_show;
@@ -59,7 +62,7 @@ public class IA extends AppCompatActivity {
 
         if (ad.canShowAd()) {
             showBottomBanner();
-            showTopBanner();
+//            showTopBanner();
 
             if (ad.canShowInterstitial(4))
                 showInstersitial();
@@ -138,8 +141,8 @@ public class IA extends AppCompatActivity {
 
     private void showBottomBanner() {
         // 获取广告条
-        View bannerView = BannerManager.getInstance(getApplicationContext())
-                .getBannerView(getApplicationContext(), new BannerViewListener() {
+        View bannerView = BannerManager.getInstance(this)
+                .getBannerView(this, new BannerViewListener() {
                     @Override
                     public void onRequestSuccess() {
                         lg.i("YJAd", "bottom banner onRequestSuccess");

@@ -19,6 +19,9 @@ import net.youmi.android.nm.sp.SpotManager;
 
 import cn.jzvd.JZVideoPlayer;
 
+/**
+ * 首页入口
+ */
 public class MA extends AppCompatActivity {
 
     private IF IF;

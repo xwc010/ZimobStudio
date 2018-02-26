@@ -19,6 +19,9 @@ import java.util.List;
 
 import cn.jzvd.JZVideoPlayer;
 
+/**
+ * 收藏夹
+ */
 public class FA extends AppCompatActivity {
 
     protected RecyclerView mRecyclerView;
