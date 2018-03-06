@@ -110,7 +110,7 @@ public class ZMHttpsClient implements IHttp {
     @Override
     public void doPost(final String reqTag, String url, ReqParams params, final CallBack callBack) {
         if (params == null || params.isNull()) {
-            callBack.onFaile(reqTag, REQ_PARAMS_EMPTY, "Request params is empty");
+            callBack.onFail(reqTag, REQ_PARAMS_EMPTY, "Request params is empty");
             return;
         }
 
@@ -135,7 +135,7 @@ public class ZMHttpsClient implements IHttp {
     @Override
     public void doPost(final String reqTag, String url, String json, final CallBack callBack) {
         if (TextUtils.isEmpty(json)) {
-            callBack.onFaile(reqTag, REQ_PARAMS_EMPTY, "Request json is empty");
+            callBack.onFail(reqTag, REQ_PARAMS_EMPTY, "Request json is empty");
             return;
         }
 
@@ -169,7 +169,7 @@ public class ZMHttpsClient implements IHttp {
             @Override
             public void onResponse(Response response) throws IOException {
                 if (!response.isSuccessful()) {
-                    callBack.onFaile(reqTag, response.code(), response.message());
+                    callBack.onFail(reqTag, response.code(), response.message());
                     return;
                 }
 

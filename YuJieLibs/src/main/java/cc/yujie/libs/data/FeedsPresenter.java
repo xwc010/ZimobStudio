@@ -37,20 +37,20 @@ public class FeedsPresenter implements FeedsContract.Presenter {
 
     @Override
     public void start() {
-        if(mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())){
+        if (mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())) {
             ZMLog.e("FeedsPresenter url is empty");
             return;
         }
-
         ZMLog.d("FeedsPresenter start() url is: " + YJLUrls.getTabFeedUrl(mTab.getDatasUrl()));
 
         ZMHttpClient.getInstance().doGet("reqstart", YJLUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                ZMLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
+                ZMLog.i("FeedsPresenter start() " + resultCode + " - " + response);
                 try {
                     Gson gson = FeedGson.getGson();
-                    Type type = new TypeToken<ArrayList<Feed>>() {}.getType();
+                    Type type = new TypeToken<ArrayList<Feed>>() {
+                    }.getType();
                     final List<Feed> feeds = gson.fromJson(response, type);
 
                     mFeedsView.onFirstSucc(feeds);
@@ -61,8 +61,8 @@ public class FeedsPresenter implements FeedsContract.Presenter {
             }
 
             @Override
-            public void onFaile(String reqTag, int resultCode, String msg) {
-                super.onFaile(reqTag, resultCode, msg);
+            public void onFail(String reqTag, int resultCode, String msg) {
+                super.onFail(reqTag, resultCode, msg);
                 mFeedsView.onFirstFail(resultCode, msg);
             }
 
@@ -81,11 +81,12 @@ public class FeedsPresenter implements FeedsContract.Presenter {
 
     /**
      * 加载下一页
+     *
      * @param cuLastFeed 当前最后一条Feed
      */
     @Override
     public void loadNextPage(Feed cuLastFeed) {
-        if(mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())){
+        if (mTab == null || TextUtils.isEmpty(mTab.getDatasUrl())) {
             ZMLog.e("FeedsPresenter url is empty");
             return;
         }
@@ -95,10 +96,11 @@ public class FeedsPresenter implements FeedsContract.Presenter {
         ZMHttpClient.getInstance().doGet("reqnext", YJLUrls.getTabFeedUrl(mTab.getDatasUrl()), new CallBack() {
             @Override
             public void onSuccess(String reqTag, int resultCode, String response) {
-                ZMLog.i("FeedsPresenter start() "+ resultCode + " - " + response);
+                ZMLog.i("FeedsPresenter start() " + resultCode + " - " + response);
                 try {
                     Gson gson = FeedGson.getGson();
-                    Type type = new TypeToken<ArrayList<Feed>>() {}.getType();
+                    Type type = new TypeToken<ArrayList<Feed>>() {
+                    }.getType();
                     final List<Feed> feeds = gson.fromJson(response, type);
 
                     mFeedsView.onNextSucc(feeds);
@@ -109,8 +111,8 @@ public class FeedsPresenter implements FeedsContract.Presenter {
             }
 
             @Override
-            public void onFaile(String reqTag, int resultCode, String msg) {
-                super.onFaile(reqTag, resultCode, msg);
+            public void onFail(String reqTag, int resultCode, String msg) {
+                super.onFail(reqTag, resultCode, msg);
                 mFeedsView.onNextFail(resultCode, msg);
             }
 
@@ -127,15 +129,15 @@ public class FeedsPresenter implements FeedsContract.Presenter {
 //        }
     }
 
-    private List<Feed> getRomte(){
+    private List<Feed> getRomte() {
         ArrayList<Feed> maps = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             Feed feed = new Feed();
-            int mode = i%5;
+            int mode = i % 5;
             feed.setDisplay_mode(mode);
 
-            switch (mode){
-                case DesplayMode.LARGE:{
+            switch (mode) {
+                case DesplayMode.LARGE: {
                     feed.setTitle("这是大图模式 " + i);
                     feed.setThumbnail("https://img2.tuicool.com/BvaYfuY.jpg!web");
                     break;

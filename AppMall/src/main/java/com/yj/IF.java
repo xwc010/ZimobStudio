@@ -114,33 +114,33 @@ public class IF extends Fragment {
 
         F f = new F();
         datas.add(f);
-        f.setTitle("归属感大厦的gas贡嘎山");
+        f.setTitle("瘟疫公司很多时候度假酒店");
         f.setImgUrl("http://img.ivsky.com/img/tupian/co/201710/31/kaixin_nvhai.jpg");
 
         F f01 = new F();
         datas.add(f01);
-        f01.setTitle("各个国家法规的三国杀");
+        f01.setTitle("违约的不会直接统计局");
         f01.setImgUrl("http://img.ivsky.com/img/tupian/co/201710/31/meili_de_xinjiang-008.jpg");
         f01.setVideoUrl("http://zimob.cc/mutil/videos/1111.vdat");
 
         F f02 = new F();
         datas.add(f02);
-        f02.setTitle("我深V的三个傻瓜");
+        f02.setTitle("文件夹过分的话的正规化电子设备");
         f02.setImgUrl("http://img.ivsky.com/img/bizhi/co/201801/08/riben_chengshi_jiedao-004.jpg");
 
         F f04 = new F();
         datas.add(f04);
-        f04.setTitle("归属感大厦的gas贡嘎山");
+        f04.setTitle("为U盾太简单高房价下次多喝点水");
         f04.setImgUrl("http://img.ivsky.com/img/tupian/co/201710/31/kaixin_nvhai.jpg");
 
         F f05 = new F();
         datas.add(f05);
-        f05.setTitle("各个国家法规的三国杀");
+        f05.setTitle("翁事实上三国杀东方红东方红");
         f05.setImgUrl("http://img.ivsky.com/img/tupian/co/201710/31/meili_de_xinjiang-008.jpg");
 
         F f06 = new F();
         datas.add(f06);
-        f06.setTitle("我深V的三个傻瓜");
+        f06.setTitle("房管局的该公司给怪怪的高规格");
         f06.setImgUrl("http://img.ivsky.com/img/bizhi/co/201801/08/riben_chengshi_jiedao-004.jpg");
 
         return datas;

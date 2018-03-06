@@ -11,7 +11,10 @@ import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cc.yujie.libs.adapter.YJLFeedAdapter;
@@ -29,6 +32,8 @@ import cc.zimo.sdk.ui.NestedRecyclerFragment;
 
 public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsContract.View {
 
+    private final int NUM = 15;
+
     @Override
     public void initUI() {
         super.initUI();
@@ -43,6 +48,19 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
 //        mRecyclerView.addItemDecoration(new DividerItemDecoration(
 //                getActivity(), DividerItemDecoration.HORIZONTAL));
 //        mRecyclerView.addItemDecoration(new RVItemDecoration());
+
+        feedAdapter = new YJLFeedAdapter(getActivity(), mFeeds);
+        // 设置adapter
+        mRecyclerView.setAdapter(feedAdapter);
+        feedAdapter.setOnItemClickListener(createOnItemClickListener());
+        feedAdapter.setOnItemChildClickListener(createOnItemChildClickListener());
+
+        feedAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                getNextPageFeeds();
+            }
+        }, mRecyclerView);
     }
 
     @Nullable
@@ -63,7 +81,7 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
     @Override
     protected void lazyLoad() {
         super.lazyLoad();
-        getFristFeed();
+        getFristPageFeeds();
     }
 
     @Override
@@ -77,8 +95,8 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
     }
 
 
-    private void getFristFeed() {
-        ZMLog.d(mTab.getName() + " - YuJieFeedFragment getFristFeed: ");
+    private void getFristPageFeeds() {
+        ZMLog.d(mTab.getName() + " - YuJieFeedFragment getFristPageFeeds: ");
         if (mFeedsPresenter == null) {
             mFeedsPresenter = new FeedsPresenter(this, mTab);
         }
@@ -86,7 +104,7 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
         mFeedsPresenter.start();
     }
 
-    private void getNextFeed() {
+    private void getNextPageFeeds() {
         ZMLog.d(mTab.getName() + " - YuJieFeedFragment getNextFeed: ");
         if (mFeedsPresenter == null) {
             mFeedsPresenter = new FeedsPresenter(this, mTab);
@@ -96,14 +114,24 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
     }
 
 
+    private List<Feed> mFeeds = new ArrayList<>();
     @Override
     public void onFirstSucc(List<Feed> datas) {
         ZMLog.d(mTab.getName() + " - YuJieFeedFragment onFirstSucc: " + datas.size());
-        feedAdapter = new YJLFeedAdapter(getActivity(), datas);
-        // 设置adapter
-        mRecyclerView.setAdapter(feedAdapter);
-        feedAdapter.setOnItemClickListener(createOnItemClickListener());
-        feedAdapter.setOnItemChildClickListener(createOnItemChildClickListener());
+        if(datas == null || datas.size() == 0){
+            return;
+        }
+
+//        mFeeds.clear();
+//        mFeeds.addAll(datas);
+//        feedAdapter.notifyDataSetChanged();
+        feedAdapter.setNewData(datas);
+        if (datas.size() < NUM) {
+            //第一页如果不够一页就不显示没有更多数据布局
+            feedAdapter.loadMoreEnd(false);
+        } else {
+            feedAdapter.loadMoreComplete();
+        }
     }
 
     @Override
@@ -112,34 +140,27 @@ public class YJLFeedFragment extends NestedRecyclerFragment implements FeedsCont
     }
 
     @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void closeLoading() {
-
-    }
-
-    @Override
     public void onNextSucc(List<Feed> datas) {
         ZMLog.d(mTab.getName() + " - YuJieFeedFragment onNextSucc: " + datas.size());
-        feedAdapter.addData(datas);
+        if (datas == null || datas.size() == 0) {
+            feedAdapter.setEnableLoadMore(false);
+            feedAdapter.loadMoreComplete();
+            feedAdapter.loadMoreEnd(false);
+//            ToastUtils.showShort("No More!");
+        } else {
+            feedAdapter.addData(datas);
+            feedAdapter.setEnableLoadMore(true);
+            feedAdapter.loadMoreComplete();
+//            mFeeds.addAll(datas);
+//            feedAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override
     public void onNextFail(int code, String msg) {
-        ToastUtils.showLong("Get Next Page Failed: code - " + code + "; msg - " + msg);
-    }
-
-    @Override
-    public void showLoadingNext() {
-
-    }
-
-    @Override
-    public void closeLoadingNext() {
-
+        feedAdapter.setEnableLoadMore(true);
+        feedAdapter.loadMoreComplete();
+        ToastUtils.showShort("Get Next Page Failed: code - " + code + "; msg - " + msg);
     }
 
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener;

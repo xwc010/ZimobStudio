@@ -59,8 +59,8 @@ public class TabPresenter implements TabContract.Presenter {
             }
 
             @Override
-            public void onFaile(String reqTag, int resultCode, String msg) {
-                super.onFaile(reqTag, resultCode, msg);
+            public void onFail(String reqTag, int resultCode, String msg) {
+                super.onFail(reqTag, resultCode, msg);
                 mTabsView.getTabFail(resultCode, msg);
                 mTabsView.closeLoading();
             }

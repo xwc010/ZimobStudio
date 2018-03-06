@@ -16,12 +16,8 @@ public interface FeedsContract {
     interface View extends IView<Presenter> {
         void onFirstSucc(List<Feed> datas);
         void onFirstFail(int code, String msg);
-        void showLoading();
-        void closeLoading();
         void onNextSucc(List<Feed> datas);
         void onNextFail(int code, String msg);
-        void showLoadingNext();
-        void closeLoadingNext();
     }
 
     interface Presenter extends IPresenter {
