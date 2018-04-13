@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import cc.zimo.dataplugs.log.ZMLog;
+
 /**
  * 应用前后台状态管理
  * 适用与Android SDK >= 14
@@ -14,10 +16,12 @@ import java.util.ArrayList;
 
 public class ForeBackgroundManager {
 
-    private ArrayList<BackgroundObserver> mBackgroundObservers;
-    private ArrayList<ForegroundObserver> mForegroundObservers;
+    private ArrayList<ToBackgroundObserver> mBackgroundObservers;
+    private ArrayList<ToForegroundObserver> mForegroundObservers;
     private int aliveNum = 0;
     private int aliveState = 0; // 0 切换到后台模式，1 从后台切换到前台，2 保持前台模式
+
+    private boolean isLaucher = true;
 
     private static ForeBackgroundManager mManager;
 
@@ -26,12 +30,12 @@ public class ForeBackgroundManager {
         mForegroundObservers = new ArrayList<>();
     }
 
-    public static ForeBackgroundManager getInstance(){
+    public static ForeBackgroundManager getInstance() {
         ForeBackgroundManager manager = mManager;
-        if(manager == null){
-            synchronized (ForeBackgroundManager.class){
+        if (manager == null) {
+            synchronized (ForeBackgroundManager.class) {
                 manager = mManager;
-                if(manager == null){
+                if (manager == null) {
                     manager = mManager = new ForeBackgroundManager();
                 }
             }
@@ -42,9 +46,11 @@ public class ForeBackgroundManager {
 
     /**
      * 请先在 {@link android.app.Application#onCreate() Application.onCreate()} 中进行初始化
+     *
      * @param application
      */
-    public void firstInit(Application application) {
+    public void initInApplication(Application application) {
+        ZMLog.d("ForeBackground [- firstInit -]");
         application.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
@@ -56,11 +62,15 @@ public class ForeBackgroundManager {
 
             @Override
             public void onActivityStarted(Activity activity) {
+//                ZMLog.d("ForeBackground - onActivityStarted:  - start -");
                 aliveNum++;
                 if (aliveNum == 1) {
                     //说明从后台回到了前台
                     aliveState = 1;
-                    dispatchForegroundEvent();
+                    if (!isLaucher) {
+                        dispatchToForegroundEvent();
+                    }
+                    isLaucher = false;
                 } else {
                     // 保持前台模式
                     aliveState = 2;
@@ -77,12 +87,13 @@ public class ForeBackgroundManager {
 
             @Override
             public void onActivityStopped(Activity activity) {
+//                ZMLog.d("ForeBackground - onActivityStopped: - stop -");
                 aliveNum--;
                 //如果aliveNum ==0，说明是前台到后台
                 if (aliveNum == 0) {
                     //说明从前台回到了后台
                     aliveState = 0;
-                    dispatchBackgroundEvent();
+                    dispatchToBackgroundEvent();
                 }
             }
 
@@ -92,51 +103,54 @@ public class ForeBackgroundManager {
         });
     }
 
+
     public boolean isBackground() {
         return aliveState == 0;
     }
 
-    public void registerBackgroundObserver(BackgroundObserver observer) {
+    public void registerBackgroundObserver(ToBackgroundObserver observer) {
         synchronized (mBackgroundObservers) {
             mBackgroundObservers.add(observer);
         }
     }
 
-    public void unregisterBackgroundObserver(BackgroundObserver observer) {
+    public void unregisterBackgroundObserver(ToBackgroundObserver observer) {
         synchronized (mBackgroundObservers) {
             mBackgroundObservers.remove(observer);
         }
     }
 
-    private void dispatchBackgroundEvent() {
-        for (BackgroundObserver observer : mBackgroundObservers) {
+    private void dispatchToBackgroundEvent() {
+        ZMLog.d("ForeBackground [foreToBackground]");
+        for (ToBackgroundObserver observer : mBackgroundObservers) {
             observer.foreToBackground();
         }
     }
 
-    public void registerForegroundObserver(ForegroundObserver observer) {
+    public void registerForegroundObserver(ToForegroundObserver observer) {
         synchronized (mForegroundObservers) {
             mForegroundObservers.add(observer);
         }
     }
 
-    public void unregisterForegroundObserver(ForegroundObserver observer) {
+    public void unregisterForegroundObserver(ToForegroundObserver observer) {
         synchronized (mForegroundObservers) {
             mForegroundObservers.remove(observer);
         }
     }
 
-    private void dispatchForegroundEvent() {
-        for (ForegroundObserver observer : mForegroundObservers) {
+    private void dispatchToForegroundEvent() {
+        ZMLog.d("ForeBackground [backToForeground]");
+        for (ToForegroundObserver observer : mForegroundObservers) {
             observer.backToForeground();
         }
     }
 
-    interface BackgroundObserver {
+    public interface ToBackgroundObserver {
         void foreToBackground();
     }
 
-    interface ForegroundObserver {
+    public interface ToForegroundObserver {
         void backToForeground();
     }
 }
