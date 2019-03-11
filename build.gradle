@@ -28,7 +28,6 @@ allprojects {
             url 'https://maven.google.com/'
             name 'Google'
         }
-        maven { url "http://mvn.yifants.cn/artifactory/fineboost" }
     }
 
 //    configurations.all {
